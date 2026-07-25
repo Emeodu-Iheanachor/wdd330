@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "vite build --emptyOutDir",
+    "build:github": "vite build --mode github --emptyOutDir",
     "preview": "vite preview",
     "lint": "eslint *.js src/**/*.js",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
@@ -34,3 +36,5 @@
     "last 3 safari versions"
   ]
 }
+
+
