@@ -38,8 +38,3 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ERCI
