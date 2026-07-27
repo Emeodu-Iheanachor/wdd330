@@ -3,7 +3,7 @@ export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
 
-// Query selector all helper
+// Get all matching elements
 export function qsa(selector, parent = document) {
   return [...parent.querySelectorAll(selector)];
 }
@@ -45,10 +45,10 @@ export async function loadData(url) {
     throw new Error(`HTTP Error: ${response.status}`);
   }
 
-  return response.json();
+  return await response.json();
 }
 
-// Render list with template
+// Render a list using a template function
 export function renderListWithTemplate(
   template,
   parentElement,
@@ -58,6 +58,7 @@ export function renderListWithTemplate(
 ) {
   const htmlStrings = list.map(template);
 
+  // Clear existing content if requested
   if (clear) {
     parentElement.innerHTML = "";
   }
@@ -65,18 +66,18 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-// Load header and footer
+// Load header and footer partials
 export async function loadHeaderFooter() {
   const header = qs("header");
   const footer = qs("footer");
 
   if (header) {
-    const response = await fetch("/partials/header.html");
-    header.innerHTML = await response.text();
+    const headerResponse = await fetch("/partials/header.html");
+    header.innerHTML = await headerResponse.text();
   }
 
   if (footer) {
-    const response = await fetch("/partials/footer.html");
-    footer.innerHTML = await response.text();
+    const footerResponse = await fetch("/partials/footer.html");
+    footer.innerHTML = await footerResponse.text();
   }
 }
