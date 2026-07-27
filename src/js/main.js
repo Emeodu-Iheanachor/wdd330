@@ -6,7 +6,7 @@ loadHeaderFooter();
 
 const category = getParam("category");
 
-const dataSource = new ProductData();
+const dataSource = new ProductData(category);
 
 const listElement = document.querySelector(".product-list");
 
