@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "vite build --emptyOutDir",
+    "build:github": "vite build --mode github --emptyOutDir",
     "preview": "vite preview",
     "lint": "eslint *.js src/**/*.js",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
@@ -20,7 +22,7 @@
     "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
     "prettier": "^3.2.5",
-    "vite": "^8.1.5"
+    "vite": "^5.4.7"
   },
   "babel": {
     "presets": [

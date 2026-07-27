@@ -1,7 +1,10 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  // GitHub Pages uses /wdd330/, Render uses /
+  base: mode === "github" ? "/wdd330/" : "/",
+
   root: "src/",
 
   build: {
@@ -15,4 +18,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
