@@ -3,7 +3,7 @@ export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
 
-// Get all matching elements
+// Query selector all helper
 export function qsa(selector, parent = document) {
   return [...parent.querySelectorAll(selector)];
 }
@@ -45,53 +45,38 @@ export async function loadData(url) {
     throw new Error(`HTTP Error: ${response.status}`);
   }
 
-  return await response.json();
+  return response.json();
 }
 
-// Render a list using a template function
+// Render list with template
 export function renderListWithTemplate(
-  templateFn,
+  template,
   parentElement,
-  data,
-  callback
+  list,
+  position = "afterbegin",
+  clear = false
 ) {
-  const html = data.map(templateFn).join("");
-  parentElement.innerHTML = html;
+  const htmlStrings = list.map(template);
 
-  if (callback) {
-    callback(parentElement);
+  if (clear) {
+    parentElement.innerHTML = "";
   }
+
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-// Load header and footer partials
+// Load header and footer
 export async function loadHeaderFooter() {
   const header = qs("header");
   const footer = qs("footer");
 
   if (header) {
-    const headerResponse = await fetch("/partials/header.html");
-    header.innerHTML = await headerResponse.text();
+    const response = await fetch("/partials/header.html");
+    header.innerHTML = await response.text();
   }
 
   if (footer) {
-    const footerResponse = await fetch("/partials/footer.html");
-    footer.innerHTML = await footerResponse.text();
+    const response = await fetch("/partials/footer.html");
+    footer.innerHTML = await response.text();
   }
-}
-
-// get the product id from the query string
-export function getParam(param) {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get(param);
-  return product
-}
-
-export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
-  const htmlStrings = list.map(template);
-  // if clear is true we need to clear out the contents of the parent.
-  if (clear) {
-    parentElement.innerHTML = "";
-  }
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
