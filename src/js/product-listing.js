@@ -1,18 +1,20 @@
+import { loadHeaderFooter, getParam } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
-import { loadHeaderFooter, getParam } from "./utils.mjs";
 
 loadHeaderFooter();
 
 const category = getParam("category");
-
 const dataSource = new ProductData();
+const element = document.querySelector(".product-list");
+const listing = new ProductList(category, dataSource, element);
 
-const listElement = document.querySelector(".product-list");
+listing.init();
 
-const myList = new ProductList(category, dataSource, listElement);
+const title = document.querySelector(".title");
 
-myList.init();
-
-document.querySelector(".title").textContent =
-  `Top Products: ${category.replace("-", " ")}`;
+if (title && category) {
+  title.textContent = `Top Products: ${category
+    .replace("-", " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase())}`;
+}

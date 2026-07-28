@@ -1,83 +1,64 @@
-// Query selector helper
+// wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
+// or a more concise version if you are into that sort of thing:
+// export const qs = (selector, parent = document) => parent.querySelector(selector);
 
-// Get all matching elements
-export function qsa(selector, parent = document) {
-  return [...parent.querySelectorAll(selector)];
-}
-
-// Get URL parameter
-export function getParam(param) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(param);
-}
-
-// Local Storage helpers
+// retrieve data from localstorage
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
-
+// save data to local storage
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
-
-// Click helper
+// set a listener for both touchend and click
 export function setClick(selector, callback) {
-  const element = qs(selector);
-
-  if (!element) return;
-
-  element.addEventListener("touchend", (event) => {
+  qs(selector).addEventListener("touchend", (event) => {
     event.preventDefault();
     callback();
   });
-
-  element.addEventListener("click", callback);
+  qs(selector).addEventListener("click", callback);
 }
 
-// Fetch JSON data
-export async function loadData(url) {
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`HTTP Error: ${response.status}`);
-  }
-
-  return await response.json();
+// get the product id from the query string
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+  return product
 }
 
-// Render a list using a template function
-export function renderListWithTemplate(
-  template,
-  parentElement,
-  list,
-  position = "afterbegin",
-  clear = false
-) {
+export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
   const htmlStrings = list.map(template);
-
-  // Clear existing content if requested
+  // if clear is true we need to clear out the contents of the parent.
   if (clear) {
     parentElement.innerHTML = "";
   }
-
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-// Load header and footer partials
+export function renderWithTemplate(template, parentElement, data, callback) {
+  parentElement.innerHTML = template;
+  if (callback) {
+    callback(data);
+  }
+}
+
+async function loadTemplate(path) {
+  const res = await fetch(path);
+  const template = await res.text();
+  return template;
+}
+
 export async function loadHeaderFooter() {
-  const header = qs("header");
-  const footer = qs("footer");
+  const headerTemplate = await loadTemplate("../partials/header.html");
+  const footerTemplate = await loadTemplate("../partials/footer.html");
 
-  if (header) {
-    const headerResponse = await fetch("/partials/header.html");
-    header.innerHTML = await headerResponse.text();
-  }
+  const headerElement = document.querySelector("#main-header");
+  const footerElement = document.querySelector("#main-footer");
 
-  if (footer) {
-    const footerResponse = await fetch("/partials/footer.html");
-    footer.innerHTML = await footerResponse.text();
-  }
+  renderWithTemplate(headerTemplate, headerElement);
+  renderWithTemplate(footerTemplate, footerElement);
 }
