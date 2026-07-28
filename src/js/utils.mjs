@@ -1,3 +1,69 @@
+// wrapper for querySelector...returns matching element
+export function qs(selector, parent = document) {
+  return parent.querySelector(selector);
+}
+
+// retrieve data from localStorage
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
+// save data to localStorage
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+// set a listener for both touchend and click
+export function setClick(selector, callback) {
+  qs(selector).addEventListener("touchend", (event) => {
+    event.preventDefault();
+    callback();
+  });
+
+  qs(selector).addEventListener("click", callback);
+}
+
+// get a parameter from the URL
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+}
+
+export function renderListWithTemplate(
+  template,
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = false,
+) {
+  const htmlStrings = list.map(template);
+
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+
+export function renderWithTemplate(
+  template,
+  parentElement,
+  data,
+  callback,
+) {
+  parentElement.innerHTML = template;
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+async function loadTemplate(path) {
+  const response = await fetch(path);
+  return await response.text();
+}
+
 export async function loadHeaderFooter() {
   const headerTemplate = await loadTemplate("../partials/header.html");
   const footerTemplate = await loadTemplate("../partials/footer.html");
@@ -8,7 +74,6 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 
-  // Set paths after the header has been inserted into the page.
   const base = import.meta.env.BASE_URL;
 
   const homeLink = document.getElementById("site-home");
