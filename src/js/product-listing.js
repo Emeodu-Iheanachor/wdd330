@@ -13,3 +13,6 @@ const listElement = document.querySelector(".product-list");
 const myList = new ProductList(category, dataSource, listElement);
 
 myList.init();
+
+document.querySelector(".title").textContent =
+  `Top Products: ${category.replace("-", " ")}`;
