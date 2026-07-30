@@ -7,193 +7,153 @@
 
     <link rel="stylesheet" href="../css/style.css" />
 
-<script type="module" src="../js/checkout.js"></script>
+    <script type="module" src="../js/checkout.js"></script>
+  </head>
 
-<main class="divider">
-  <h2>Checkout</h2>
+  <body>
+    <header class="divider" id="main-header"></header>
 
-  <section class="checkout-form">
-    <form name="checkout">
+    <main class="divider">
+      <h2>Checkout</h2>
 
-      <fieldset>
-        <legend>Customer Information</legend>
+      <section class="checkout-form">
+        <form name="checkout">
 
-        <label for="fname">
-          First Name
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            required
-          />
-        </label>
+          <fieldset>
+            <legend>Customer Information</legend>
 
-        <label for="lname">
-          Last Name
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            required
-          />
-        </label>
+            <label for="fname">
+              First Name
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                required
+              />
+            </label>
 
-        <label for="email">
-          Email
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
-        </label>
+            <label for="lname">
+              Last Name
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                required
+              />
+            </label>
 
-        <label for="phone">
-          Phone
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-          />
-        </label>
-      </fieldset>
+            <label for="email">
+              Email
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </label>
 
-      <fieldset>
-        <legend>Shipping Address</legend>
+            <label for="phone">
+              Phone
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+              />
+            </label>
+          </fieldset>
 
-        <label for="street">
-          Street Address
-          <input
-            type="text"
-            id="street"
-            name="street"
-            required
-          />
-        </label>
+          <fieldset>
+            <legend>Shipping Address</legend>
 
-        <label for="city">
-          City
-          <input
-            type="text"
-            id="city"
-            name="city"
-            required
-          />
-        </label>
+            <label for="street">
+              Street Address
+              <input
+                type="text"
+                id="street"
+                name="street"
+                required
+              />
+            </label>
 
-        <label for="state">
-          State / Province
-          <input
-            type="text"
-            id="state"
-            name="state"
-            required
-          />
-        </label>
+            <label for="city">
+              City
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+              />
+            </label>
 
-        <label for="zip">
-          ZIP / Postal Code
-          <input
-            type="text"
-            id="zip"
-            name="zip"
-            required
-          />
-        </label>
+            <label for="state">
+              State / Province
+              <input
+                type="text"
+                id="state"
+                name="state"
+                required
+              />
+            </label>
 
-        <label for="country">
-          Country
-          <input
-            type="text"
-            id="country"
-            name="country"
-            required
-          />
-        </label>
-      </fieldset>
+            <label for="zip">
+              ZIP / Postal Code
+              <input
+                type="text"
+                id="zip"
+                name="zip"
+                required
+              />
+            </label>
 
-      <!-- Payment Information -->
-      <fieldset>
-        <legend>Payment Information</legend>
+            <label for="country">
+              Country
+              <input
+                type="text"
+                id="country"
+                name="country"
+                required
+              />
+            </label>
+          </fieldset>
 
-        <label for="cardNumber">
-          Card Number
-          <input
-            type="text"
-            id="cardNumber"
-            name="cardNumber"
-            inputmode="numeric"
-            maxlength="19"
-            placeholder="1234 5678 9012 3456"
-            autocomplete="cc-number"
-            required
-          />
-        </label>
+          <button id="checkoutSubmit" type="submit">
+            Checkout
+          </button>
 
-        <label for="expiration">
-          Expiration Date
-          <input
-            type="text"
-            id="expiration"
-            name="expiration"
-            maxlength="5"
-            placeholder="MM/YY"
-            autocomplete="cc-exp"
-            required
-          />
-        </label>
+        </form>
+      </section>
 
-        <label for="securityCode">
-          Security Code (CVV)
-          <input
-            type="password"
-            id="securityCode"
-            name="securityCode"
-            inputmode="numeric"
-            maxlength="4"
-            placeholder="123"
-            autocomplete="cc-csc"
-            required
-          />
-        </label>
-      </fieldset>
+      <section class="checkout-summary">
+        <h3>Order Summary</h3>
 
-      <button id="checkoutSubmit" type="submit">
-        Checkout
-      </button>
+        <p>
+          Items:
+          <span id="num-items">0</span>
+        </p>
 
-    </form>
-  </section>
+        <p>
+          Subtotal:
+          <span id="cartTotal">$0.00</span>
+        </p>
 
-  <section class="checkout-summary">
-    <h3>Order Summary</h3>
+        <p>
+          Shipping:
+          <span id="shipping">$0.00</span>
+        </p>
 
-    <p>
-      Items:
-      <span id="num-items">0</span>
-    </p>
+        <p>
+          Tax:
+          <span id="tax">$0.00</span>
+        </p>
 
-    <p>
-      Subtotal:
-      <span id="cartTotal">$0.00</span>
-    </p>
+        <h3>
+          Total:
+          <span id="orderTotal">$0.00</span>
+        </h3>
+      </section>
+    </main>
 
-    <p>
-      Shipping:
-      <span id="shipping">$0.00</span>
-    </p>
-
-    <p>
-      Tax:
-      <span id="tax">$0.00</span>
-    </p>
-
-    <h3>
-      Total:
-      <span id="orderTotal">$0.00</span>
-    </h3>
-  </section>
-</main>
-
-<footer id="main-footer"></footer>
+    <footer id="main-footer"></footer>
+  </body>
+</html>

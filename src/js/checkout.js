@@ -6,47 +6,6 @@ loadHeaderFooter();
 const myCheckout = new CheckoutProcess("so-cart", ".checkout-summary");
 myCheckout.init();
 
-// ----------------------------
-// Payment field formatting
-// ----------------------------
-function setupPaymentFields() {
-  const cardNumber = document.querySelector("#cardNumber");
-  const expiration = document.querySelector("#expiration");
-  const securityCode = document.querySelector("#securityCode");
-
-  if (cardNumber) {
-    cardNumber.addEventListener("input", (e) => {
-      let value = e.target.value.replace(/\D/g, "");
-      value = value.substring(0, 16);
-      value = value.replace(/(.{4})/g, "$1 ").trim();
-      e.target.value = value;
-    });
-  }
-
-  if (expiration) {
-    expiration.addEventListener("input", (e) => {
-      let value = e.target.value.replace(/\D/g, "");
-      value = value.substring(0, 4);
-
-      if (value.length > 2) {
-        value = `${value.substring(0, 2)}/${value.substring(2)}`;
-      }
-
-      e.target.value = value;
-    });
-  }
-
-  if (securityCode) {
-    securityCode.addEventListener("input", (e) => {
-      e.target.value = e.target.value
-        .replace(/\D/g, "")
-        .substring(0, 4);
-    });
-  }
-}
-
-setupPaymentFields();
-
 // Recalculate totals when the ZIP code changes
 document
   .querySelector("#zip")
