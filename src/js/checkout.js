@@ -6,20 +6,33 @@ loadHeaderFooter();
 const myCheckout = new CheckoutProcess("so-cart", ".checkout-summary");
 myCheckout.init();
 
+// Recalculate totals when the ZIP code changes
 document
   .querySelector("#zip")
   .addEventListener("blur", myCheckout.calculateOrdertotal.bind(myCheckout));
-// listening for click on the button
+
+// Checkout button
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
   e.preventDefault();
 
-  myCheckout.checkout();
+  // Get the checkout form
+  const myForm = document.forms["checkout"];
+
+  // Check HTML validation
+  const isValid = myForm.checkValidity();
+
+  // Show browser validation messages
+  myForm.reportValidity();
+
+  // Only continue if the form is valid
+  if (isValid) {
+    myCheckout.checkout();
+  }
 });
 
-// this is how it would look if we listen for the submit on the form
-// document.forms['checkout']
-// .addEventListener('submit', (e) => {
+// If you prefer using the submit event instead:
+//
+// document.forms["checkout"].addEventListener("submit", (e) => {
 //   e.preventDefault();
-//   // e.target would contain our form in this case
-//    myCheckout.checkout();
+//   myCheckout.checkout();
 // });

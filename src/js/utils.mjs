@@ -78,7 +78,7 @@ export function alertMessage(message, scroll = true, duration = 3000) {
   alert.innerHTML = `<p>${message}</p><span>X</span>`;
 
   alert.addEventListener("click", function (e) {
-    if (e.target.tagName == "SPAN") {
+    if (e.target.tagName === "SPAN") {
       main.removeChild(this);
     }
   });
