@@ -1,0 +1,23 @@
+{
+  "name": "psyguide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "PsyGuide - Mental Wellness Web Application (WDD 330 Final Project)",
+  "author": "Emeodu Raphael Chidiebere Iheanachor",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "build:github": "vite build --mode github --emptyOutDir",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "vite": "^8.2.0"
+  }
+}
