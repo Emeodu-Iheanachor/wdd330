@@ -1,3 +1,13 @@
+import SearchHistory from "./SearchHistory.js";
+const searchHistory = new SearchHistory();
+
+const historyContainer =
+  document.getElementById("searchHistory");
+
+const clearHistoryBtn =
+  document.getElementById("clearHistoryBtn");
+
+
 import SearchData from "./SearchData.js";
 
 const searchData = new SearchData();
@@ -103,11 +113,69 @@ function renderResults(items) {
   });
 }
 
+
+/**
+ * Display recent searches.
+ */
+function renderHistory() {
+
+  const history =
+    searchHistory.getHistory();
+
+  historyContainer.innerHTML = "";
+
+  if (!history.length) {
+
+    historyContainer.innerHTML = `
+      <p class="placeholder">
+        No recent searches.
+      </p>
+    `;
+
+    return;
+  }
+
+  history.forEach((query) => {
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "history-item";
+
+    button.innerHTML = `
+      🕒 ${query}
+    `;
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        searchInput.value = query;
+
+        handleSearch();
+
+      }
+    );
+
+    historyContainer.appendChild(button);
+
+  });
+
+}
+
 /**
  * Handle user typing.
  */
+
 async function handleSearch() {
   const query = searchInput.value.trim();
+
+  if (query.length >= 2) {
+
+  searchHistory.addSearch(query);
+
+}
 
   if (!query) {
     suggestions.style.display = "none";
@@ -130,7 +198,20 @@ async function handleSearch() {
   renderResults(searchResults);
 
   renderSuggestions(suggestionResults);
+  renderHistory();
 }
+
+clearHistoryBtn.addEventListener(
+  "click",
+  () => {
+
+    searchHistory.clearHistory();
+
+    renderHistory();
+
+  }
+);
+
 
 /**
  * Hide suggestions when clicking outside.
@@ -160,6 +241,10 @@ searchInput.addEventListener(
   "input",
   handleSearch
 );
+
+renderHistory();
+
+
 
 /**
  * ESC closes suggestions.

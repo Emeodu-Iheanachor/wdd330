@@ -221,3 +221,103 @@
     text-align: center;
   }
 }
+
+
+/* ==========================================================
+   Search History
+========================================================== */
+
+.history-section {
+  margin: 2rem 0 3rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.history-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.3rem;
+}
+
+.clear-history-btn {
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.clear-history-btn:hover {
+  background: #dc2626;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.history-item {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.history-item:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.history-list .placeholder {
+  margin: 0;
+  color: #6b7280;
+  padding: 0.5rem 0;
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 768px) {
+
+  .history-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clear-history-btn {
+    width: 100%;
+  }
+
+  .history-list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .history-item {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+  }
+}

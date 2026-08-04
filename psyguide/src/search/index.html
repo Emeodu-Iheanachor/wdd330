@@ -38,18 +38,53 @@
 
     <section class="search-box">
 
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="Search topics..."
-            autocomplete="off">
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search topics..."
+        autocomplete="off">
 
-        <div
-            id="suggestions"
-            class="suggestions">
-        </div>
+    <div
+        id="suggestions"
+        class="suggestions">
+    </div>
+
+</section>
+
+<!-- ============================= -->
+<!-- Search History -->
+<!-- ============================= -->
+
+<section class="history-section">
+
+    <div class="history-header">
+
+        <h2>Recent Searches</h2>
+
+        <button
+            id="clearHistoryBtn"
+            class="clear-history-btn">
+
+            Clear History
+
+        </button>
+
+    </div>
+
+    <div
+        id="searchHistory"
+        class="history-list">
+
+        <p class="placeholder">
+
+            No recent searches.
+
+        </p>
+
+    </div>
 
     </section>
+
 
     <section class="results-section">
 
@@ -74,6 +109,7 @@
 <script
     type="module"
     src="/js/search.js">
+    
 </script>
 
 </body>

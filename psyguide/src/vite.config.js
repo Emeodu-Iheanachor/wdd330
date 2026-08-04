@@ -2,42 +2,38 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages uses /wdd330/
-  // Localhost and Render use /
-  base: mode === "github" ? "/wdd330/" : "/",
-
-  root: "src",
+  base: mode === "github" ? "/wdd330/psyguide/" : "/",
 
   build: {
-    outDir: "../dist",
+    outDir: "dist",
     emptyOutDir: true,
 
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
+        main: resolve(import.meta.dirname, "index.html"),
 
         categories: resolve(
-          __dirname,
+          import.meta.dirname,
           "src/categories/index.html"
         ),
 
         resources: resolve(
-          __dirname,
+          import.meta.dirname,
           "src/resources/index.html"
         ),
 
         about: resolve(
-          __dirname,
+          import.meta.dirname,
           "src/about/index.html"
         ),
 
         profile: resolve(
-          __dirname,
+          import.meta.dirname,
           "src/profile/index.html"
         ),
 
         details: resolve(
-          __dirname,
+          import.meta.dirname,
           "src/details/index.html"
         ),
       },
