@@ -6,12 +6,12 @@
 
     <title>PsyGuide | Topic Details</title>
 
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-    <link rel="stylesheet" href="/css/details.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/navigation.css">
+    <link rel="stylesheet" href="/src/css/details.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
 </head>
 
 <body>
@@ -19,6 +19,15 @@
 <header></header>
 
 <main class="container">
+<!-- Loading Overlay -->
+<div id="loadingScreen" class="loading-screen">
+
+    <div class="loader"></div>
+
+    <p>Loading topic...</p>
+
+</div>
+
 
     <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -127,6 +136,20 @@
         </ul>
 
     </section>
+
+    <!-- Related Topics -->
+<section class="detail-card">
+
+    <h2>Related Topics</h2>
+
+    <div id="relatedTopics" class="related-topics">
+
+        <p>Loading related topics...</p>
+
+    </div>
+
+</section>
+
 
 </main>
 

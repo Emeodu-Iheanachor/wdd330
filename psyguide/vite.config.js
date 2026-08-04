@@ -2,11 +2,6 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages:
-  // https://emeodu-iheanachor.github.io/wdd330/psyguide/
-  //
-  // Localhost and Render:
-  // /
   base: mode === "github" ? "/wdd330/psyguide/" : "/",
 
   build: {

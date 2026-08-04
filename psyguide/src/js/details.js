@@ -123,4 +123,107 @@ function setupButtons(topic) {
   });
 }
 
+/**
+ * Display related topics from the same category.
+ */
+async function loadRelatedTopics(currentTopic) {
+  const container = document.getElementById("relatedTopics");
+
+  if (!container) return;
+
+  const topics = await topicData.getTopicsByCategory(currentTopic.category);
+
+  const related = topics.filter(
+    (topic) => topic.id !== currentTopic.id
+  );
+
+  container.innerHTML = "";
+
+  if (!related.length) {
+    container.innerHTML =
+      "<p>No related topics available.</p>";
+    return;
+  }
+
+  related.forEach((topic) => {
+    const card = document.createElement("div");
+    card.className = "related-card";
+
+    card.innerHTML = `
+      <h3>${topic.icon} ${topic.title}</h3>
+      <p>${topic.description}</p>
+      <a href="../details/index.html?id=${topic.id}">
+        Read More
+      </a>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function showLoader() {
+  document
+    .getElementById("loadingScreen")
+    ?.classList.remove("hidden");
+}
+
+function hideLoader() {
+  document
+    .getElementById("loadingScreen")
+    ?.classList.add("hidden");
+}
+
+
+function showError() {
+
+  document.querySelector("main").innerHTML = `
+    <section class="error-message">
+
+      <h2>Topic Not Found</h2>
+
+      <p>
+        Sorry, the topic you're looking for doesn't exist.
+      </p>
+
+      <a href="../categories/index.html">
+        Back to Categories
+      </a>
+
+    </section>
+  `;
+}
+
+
 loadTopic();
+
+async function loadTopic() {
+
+  showLoader();
+
+  const id = getParam("id");
+
+  if (!id) {
+
+    hideLoader();
+
+    showError();
+
+    return;
+  }
+
+  const topic = await topicData.getTopicById(id);
+
+  if (!topic) {
+
+    hideLoader();
+
+    showError();
+
+    return;
+  }}
+
+  // Existing code continues here...
+
+setupButtons(topic);
+loadRelatedTopics(topic);
+hideLoader();
