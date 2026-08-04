@@ -1,0 +1,188 @@
+[
+  {
+    "id": "anxiety",
+    "category": "mental-health",
+    "title": "Anxiety",
+    "icon": "😟",
+    "description": "Anxiety is a feeling of fear, worry, or uneasiness that can affect daily life.",
+    "definition": "Anxiety disorders involve excessive fear or worry that is difficult to control and interferes with normal daily activities.",
+    "symptoms": [
+      "Excessive worrying",
+      "Rapid heartbeat",
+      "Sweating",
+      "Restlessness",
+      "Difficulty concentrating",
+      "Trouble sleeping"
+    ],
+    "causes": [
+      "Genetics",
+      "Stressful life events",
+      "Brain chemistry",
+      "Medical conditions"
+    ],
+    "treatment": [
+      "Cognitive Behavioral Therapy (CBT)",
+      "Medication prescribed by a healthcare provider",
+      "Relaxation techniques",
+      "Regular exercise"
+    ],
+    "prevention": [
+      "Manage stress",
+      "Exercise regularly",
+      "Maintain healthy sleep habits",
+      "Limit caffeine"
+    ],
+    "resources": [
+      "Talk with a licensed mental health professional",
+      "National mental health organizations",
+      "Support groups"
+    ]
+  },
+  {
+    "id": "depression",
+    "category": "mental-health",
+    "title": "Depression",
+    "icon": "😔",
+    "description": "Depression is a mood disorder that causes persistent sadness and loss of interest.",
+    "definition": "Depression affects how a person feels, thinks, and behaves, often interfering with work, relationships, and daily activities.",
+    "symptoms": [
+      "Persistent sadness",
+      "Loss of interest",
+      "Fatigue",
+      "Feelings of hopelessness",
+      "Changes in appetite",
+      "Difficulty sleeping"
+    ],
+    "causes": [
+      "Genetics",
+      "Chemical imbalance",
+      "Traumatic experiences",
+      "Chronic illness"
+    ],
+    "treatment": [
+      "Psychotherapy",
+      "Medication",
+      "Lifestyle changes",
+      "Support groups"
+    ],
+    "prevention": [
+      "Stay socially connected",
+      "Exercise",
+      "Manage stress",
+      "Seek help early"
+    ],
+    "resources": [
+      "Mental health clinics",
+      "Counselors",
+      "Community support services"
+    ]
+  },
+  {
+    "id": "stress",
+    "category": "mental-health",
+    "title": "Stress",
+    "icon": "😫",
+    "description": "Stress is the body's natural response to challenges or demands.",
+    "definition": "Stress becomes harmful when it is constant or overwhelming and affects physical or emotional health.",
+    "symptoms": [
+      "Headaches",
+      "Muscle tension",
+      "Irritability",
+      "Fatigue",
+      "Difficulty sleeping"
+    ],
+    "causes": [
+      "Work pressure",
+      "Financial problems",
+      "Family responsibilities",
+      "Major life changes"
+    ],
+    "treatment": [
+      "Time management",
+      "Relaxation exercises",
+      "Physical activity",
+      "Professional counseling"
+    ],
+    "prevention": [
+      "Take regular breaks",
+      "Practice mindfulness",
+      "Maintain a healthy lifestyle",
+      "Build a support network"
+    ],
+    "resources": [
+      "Stress management programs",
+      "Mental health professionals",
+      "Employee assistance programs"
+    ]
+  },
+  {
+    "id": "adhd",
+    "category": "mental-health",
+    "title": "ADHD",
+    "icon": "🧩",
+    "description": "Attention-Deficit/Hyperactivity Disorder affects attention, impulse control, and activity levels.",
+    "definition": "ADHD is a neurodevelopmental condition commonly diagnosed in childhood but may continue into adulthood.",
+    "symptoms": [
+      "Difficulty focusing",
+      "Forgetfulness",
+      "Impulsiveness",
+      "Hyperactivity"
+    ],
+    "causes": [
+      "Genetics",
+      "Brain development",
+      "Environmental influences"
+    ],
+    "treatment": [
+      "Behavioral therapy",
+      "Medication",
+      "Educational support",
+      "Routine planning"
+    ],
+    "prevention": [
+      "Early diagnosis",
+      "Consistent routines",
+      "Family support"
+    ],
+    "resources": [
+      "ADHD specialists",
+      "Educational resources",
+      "Support groups"
+    ]
+  },
+  {
+    "id": "ptsd",
+    "category": "mental-health",
+    "title": "Post-Traumatic Stress Disorder (PTSD)",
+    "icon": "💔",
+    "description": "PTSD can develop after experiencing or witnessing a traumatic event.",
+    "definition": "PTSD is a mental health condition involving persistent distress following traumatic experiences.",
+    "symptoms": [
+      "Flashbacks",
+      "Nightmares",
+      "Avoidance",
+      "Hypervigilance"
+    ],
+    "causes": [
+      "Combat exposure",
+      "Accidents",
+      "Violence",
+      "Natural disasters"
+    ],
+    "treatment": [
+      "Trauma-focused therapy",
+      "Medication",
+      "Support groups"
+    ],
+    "prevention": [
+      "Early intervention",
+      "Access to counseling",
+      "Strong social support"
+    ],
+    "resources": [
+      "Trauma recovery centers",
+      "Licensed therapists",
+      "Veteran support organizations"
+    ]
+  }
+]
