@@ -2,41 +2,76 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "github" ? "/wdd330/psyguide/" : "/",
 
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
+    // GitHub Pages
+    base: mode === "github"
+        ? "/wdd330/"
+        : "/",
 
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html"),
+    build: {
 
-        categories: resolve(
-          __dirname,
-          "src/categories/index.html"
-        ),
+        // Production files
+        outDir: "dist",
 
-        resources: resolve(
-          __dirname,
-          "src/resources/index.html"
-        ),
+        // Remove previous build before creating a new one
+        emptyOutDir: true,
 
-        about: resolve(
-          __dirname,
-          "src/about/index.html"
-        ),
+        rollupOptions: {
 
-        profile: resolve(
-          __dirname,
-          "src/profile/index.html"
-        ),
+            input: {
 
-        details: resolve(
-          __dirname,
-          "src/details/index.html"
-        ),
-      },
-    },
-  },
+                // Home
+                main: resolve(
+                    __dirname,
+                    "src/index.html"
+                ),
+
+                // Categories
+                categories: resolve(
+                    __dirname,
+                    "src/categories/index.html"
+                ),
+
+                // Details
+                details: resolve(
+                    __dirname,
+                    "src/details/index.html"
+                ),
+
+                // Search
+                search: resolve(
+                    __dirname,
+                    "src/search/index.html"
+                ),
+
+                // Favorites
+                favorites: resolve(
+                    __dirname,
+                    "src/favorites/index.html"
+                ),
+
+                // Resources
+                resources: resolve(
+                    __dirname,
+                    "src/resources/index.html"
+                ),
+
+                // About
+                about: resolve(
+                    __dirname,
+                    "src/about/index.html"
+                ),
+
+                // Profile
+                profile: resolve(
+                    __dirname,
+                    "src/profile/index.html"
+                )
+
+            }
+
+        }
+
+    }
+
 }));
