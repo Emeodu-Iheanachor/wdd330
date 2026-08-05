@@ -47,3 +47,24 @@ header{
     color:var(--primary);
 
 }
+
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    .logo-image {
+        width: 115px;
+    }
+
+}

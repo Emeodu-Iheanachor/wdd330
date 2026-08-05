@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Manage your PsyGuide profile, favorites, and search history.">
+
+    <title>PsyGuide | Profile</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+    <header></header>
+
+    <main class="container">
+
+        <nav
+            class="breadcrumb"
+            aria-label="Breadcrumb">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <span aria-hidden="true">›</span>
+
+            <span>
+                Profile
+            </span>
+
+        </nav>
+
+
+        <section class="page-header">
+
+            <h1>
+                My Profile
+            </h1>
+
+            <p>
+                Manage your PsyGuide preferences and
+                saved activity.
+            </p>
+
+        </section>
+
+
+        <section
+            class="info-section"
+            aria-labelledby="profile-information">
+
+            <h2 id="profile-information">
+                Profile Information
+            </h2>
+
+            <form id="profileForm">
+
+                <div class="form-group">
+
+                    <label for="profileName">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="profileName"
+                        name="profileName"
+                        placeholder="Enter your name"
+                        autocomplete="name">
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="button">
+
+                    Save Profile
+
+                </button>
+
+                <p
+                    id="profileMessage"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <section aria-labelledby="activity">
+
+            <h2 id="activity">
+                My Activity
+            </h2>
+
+            <div class="category-grid">
+
+                <article class="card">
+
+                    <div
+                        class="card-icon"
+                        aria-hidden="true">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Favorites
+                    </h3>
+
+                    <p>
+                        Saved topics:
+                        <strong id="favoriteCount">
+                            0
+                        </strong>
+                    </p>
+
+                    <a
+                        href="../favorites/"
+                        class="button">
+
+                        View Favorites
+
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div
+                        class="card-icon"
+                        aria-hidden="true">
+                        🕘
+                    </div>
+
+                    <h3>
+                        Search History
+                    </h3>
+
+                    <p>
+                        Saved searches:
+                        <strong id="historyCount">
+                            0
+                        </strong>
+                    </p>
+
+                    <a
+                        href="../search/"
+                        class="button">
+
+                        Search Topics
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="info-section"
+            aria-labelledby="manage-data">
+
+            <h2 id="manage-data">
+                Manage My Data
+            </h2>
+
+            <p>
+                PsyGuide can store your profile preferences,
+                favorites, and search history in your browser's
+                Local Storage.
+            </p>
+
+            <div class="profile-actions">
+
+                <button
+                    type="button"
+                    id="clearFavorites"
+                    class="button">
+
+                    Clear Favorites
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="clearHistory"
+                    class="button">
+
+                    Clear Search History
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="resetProfile"
+                    class="button">
+
+                    Reset Profile
+
+                </button>
+
+            </div>
+
+            <p
+                id="dataMessage"
+                aria-live="polite">
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer></footer>
+
+    <script
+        type="module"
+        src="../js/navigation.js">
+    </script>
+
+    <script
+        type="module"
+        src="../js/profile.js">
+    </script>
+
+</body>
+
+</html>
