@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "National Alliance on Mental Illness",
+    "category": "Support Organization",
+    "description": "Provides education, advocacy, and support for individuals and families affected by mental illness.",
+    "website": "https://www.nami.org"
+  },
+  {
+    "id": 2,
+    "name": "Mental Health America",
+    "category": "Mental Health Education",
+    "description": "Offers mental health screening tools, educational resources, prevention information, and community support.",
+    "website": "https://www.mhanational.org"
+  },
+  {
+    "id": 3,
+    "name": "988 Suicide & Crisis Lifeline",
+    "category": "Crisis Support",
+    "description": "Provides free and confidential crisis support for people experiencing emotional distress or a mental health crisis in the United States.",
+    "website": "https://988lifeline.org"
+  },
+  {
+    "id": 4,
+    "name": "World Health Organization",
+    "category": "Global Mental Health",
+    "description": "Provides global information, guidance, research, and resources related to mental health and psychological well-being.",
+    "website": "https://www.who.int"
+  },
+  {
+    "id": 5,
+    "name": "Counselling Association of Nigeria",
+    "category": "Guidance and Counselling",
+    "description": "A professional counselling organization in Nigeria providing resources and professional support related to personal, social, educational, developmental, career, community, trauma, anxiety, and other counselling services.",
+    "website": "https://www.cassonnigeria.org"
+  },
+  {
+    "id": 6,
+    "name": "American Psychological Association",
+    "category": "Psychology and Behavioral Science",
+    "description": "Provides psychological science resources, research, professional information, educational materials, and resources covering many areas of human behavior and mental health.",
+    "website": "https://www.apa.org"
+  },
+  {
+    "id": 7,
+    "name": "APA PsycInfo",
+    "category": "Psychological Research",
+    "description": "Provides access to authoritative research literature covering psychology, behavioral science, social science, education, neuroscience, and related disciplines.",
+    "website": "https://www.apa.org/pubs/databases/psycinfo"
+  },
+  {
+    "id": 8,
+    "name": "Society for Industrial and Organizational Psychology",
+    "category": "Industrial and Organizational Psychology",
+    "description": "Provides research, professional resources, and practical knowledge about human behavior, performance, well-being, leadership, assessment, and organizational effectiveness in workplace settings.",
+    "website": "https://www.siop.org"
+  },
+  {
+    "id": 9,
+    "name": "International Association of Applied Psychology",
+    "category": "Applied Psychology",
+    "description": "Promotes the science and practice of applied psychology and supports communication and collaboration among applied psychologists worldwide.",
+    "website": "https://www.iaapsy.org"
+  },
+  {
+    "id": 10,
+    "name": "International Labour Organization",
+    "category": "Workplace Mental Health",
+    "description": "Provides resources and guidance on workplace mental health, psychosocial risks, occupational safety, employee well-being, healthy working environments, and decent work.",
+    "website": "https://www.ilo.org"
+  },
+  {
+    "id": 11,
+    "name": "American Counseling Association",
+    "category": "Counselling",
+    "description": "Provides professional resources, education, ethical guidance, and information supporting counselling practice and human development.",
+    "website": "https://www.counseling.org"
+  },
+  {
+    "id": 12,
+    "name": "British Psychological Society",
+    "category": "Psychology",
+    "description": "Provides psychological knowledge, professional resources, research, and educational information to support the understanding and application of psychology.",
+    "website": "https://www.bps.org.uk"
+  },
+  {
+    "id": 13,
+    "name": "Mental Health Foundation",
+    "category": "Mental Well-being",
+    "description": "Provides information, education, and resources focused on protecting and improving mental health and preventing mental health problems.",
+    "website": "https://www.mentalhealth.org.uk"
+  },
+  {
+    "id": 14,
+    "name": "Mind",
+    "category": "Mental Health Support",
+    "description": "Provides information and support resources related to mental health, emotional well-being, coping strategies, and accessing appropriate help.",
+    "website": "https://www.mind.org.uk"
+  },
+  {
+    "id": 15,
+    "name": "UNICEF",
+    "category": "Child and Adolescent Development",
+    "description": "Provides resources addressing child and adolescent development, mental health, emotional well-being, education, protection, and social development.",
+    "website": "https://www.unicef.org"
+  },
+  {
+    "id": 16,
+    "name": "Centers for Disease Control and Prevention",
+    "category": "Mental Health and Public Health",
+    "description": "Provides public health information and resources concerning mental health, emotional well-being, behavioral health, prevention, and community health.",
+    "website": "https://www.cdc.gov"
+  },
+  {
+    "id": 17,
+    "name": "National Institute of Mental Health",
+    "category": "Mental Health Research",
+    "description": "Provides research-based information about mental health conditions, treatment, prevention, and the science of mental health.",
+    "website": "https://www.nimh.nih.gov"
+  },
+  {
+    "id": 18,
+    "name": "Substance Abuse and Mental Health Services Administration",
+    "category": "Behavioral Health",
+    "description": "Provides resources related to mental health, substance use, prevention, treatment, recovery, and behavioral health services.",
+    "website": "https://www.samhsa.gov"
+  },
+  {
+    "id": 19,
+    "name": "International Labour Organization Workplace Well-being",
+    "category": "Employee Well-being",
+    "description": "Provides guidance and practical resources for improving workplace health, employee well-being, psychosocial safety, and healthy working environments.",
+    "website": "https://www.ilo.org/workplace-health-promotion-and-well-being"
+  },
+  {
+    "id": 20,
+    "name": "Society for Human Resource Management",
+    "category": "Human Resources and Workplace Development",
+    "description": "Provides professional resources related to human resources, workplace culture, employee development, leadership, organizational practices, and workforce management.",
+    "website": "https://www.shrm.org"
+  }
+]

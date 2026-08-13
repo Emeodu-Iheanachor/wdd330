@@ -1,161 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- =================================================
+         DOCUMENT INFORMATION
+    ================================================== -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PsyGuide | Topic Details</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/details.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-  </head>
+    <meta
+        name="description"
+        content="Explore detailed mental wellness information, including symptoms, causes, coping strategies, prevention, and helpful resources with PsyGuide.">
+
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =================================================
+         PAGE TITLE
+    ================================================== -->
+
+    <title>
+        PsyGuide | Mental Wellness Topic
+    </title>
+
+
+    <!-- =================================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ================================================== -->
+
+    <meta
+        property="og:type"
+        content="article">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Mental Wellness Topic">
+
+    <meta
+        property="og:description"
+        content="Learn about mental wellness topics, common signs, causes, coping strategies, prevention, and when professional support may be helpful.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/details/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide mental wellness information">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =================================================
+         X / TWITTER CARD
+    ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Mental Wellness Topic">
+
+    <meta
+        name="twitter:description"
+        content="Explore helpful mental wellness information with PsyGuide.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide mental wellness information">
+
+
+    <!-- =================================================
+         FAVICON
+    ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =================================================
+         CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/details.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+</head>
+
 
 <body>
 
-<header></header>
 
-<main class="container">
-<!-- Loading Overlay -->
-<div id="loadingScreen" class="loading-screen">
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
-    <div class="loader"></div>
-
-    <p>Loading topic...</p>
-
-</div>
+    <header></header>
 
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>›</span>
-        <a href="../categories/index.html">Categories</a>
-        <span>›</span>
-        <span id="breadcrumbTitle">Loading...</span>
-    </nav>
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
 
-    <!-- Topic Header -->
-    <section class="topic-header">
+    <main class="container">
 
-        <div class="topic-icon" id="topicIcon">
-            🧠
-        </div>
 
-        <div>
+        <!-- =================================================
+             LOADING SCREEN
+        ================================================== -->
 
-            <h1 id="topicTitle">
-                Loading...
-            </h1>
+        <div
+            id="loadingScreen"
+            class="loading-screen">
 
-            <p id="topicDescription">
-                Please wait...
+            <div
+                class="loader"
+                aria-hidden="true">
+            </div>
+
+            <p>
+                Loading topic...
             </p>
 
         </div>
 
-    </section>
 
-    <!-- Quick Actions -->
-    <section class="quick-actions">
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
 
-        <button id="favoriteBtn">
-            ❤️ Add to Favorites
-        </button>
+        <nav
+            class="breadcrumb"
+            aria-label="Breadcrumb">
 
-        <button id="shareBtn">
-            🔗 Share
-        </button>
+            <a href="../index.html">
+                Home
+            </a>
 
-        <button id="backBtn">
-            ← Back to Categories
-        </button>
+            <span aria-hidden="true">
+                ›
+            </span>
 
-    </section>
+            <a href="../categories/index.html">
+                Categories
+            </a>
 
-    <!-- Definition -->
-    <section class="detail-card">
+            <span aria-hidden="true">
+                ›
+            </span>
 
-        <h2>Definition</h2>
+            <span
+                id="breadcrumbTitle"
+                aria-current="page">
 
-        <p id="definition">
-            Loading...
-        </p>
+                Loading...
 
-    </section>
+            </span>
 
-    <!-- Symptoms -->
-    <section class="detail-card">
-
-        <h2>Common Symptoms</h2>
-
-        <ul id="symptoms">
-        </ul>
-
-    </section>
-
-    <!-- Causes -->
-    <section class="detail-card">
-
-        <h2>Possible Causes</h2>
-
-        <ul id="causes">
-        </ul>
-
-    </section>
-
-    <!-- Treatment -->
-    <section class="detail-card">
-
-        <h2>Treatment</h2>
-
-        <ul id="treatment">
-        </ul>
-
-    </section>
-
-    <!-- Prevention -->
-    <section class="detail-card">
-
-        <h2>Prevention</h2>
-
-        <ul id="prevention">
-        </ul>
-
-    </section>
-
-    <!-- Resources -->
-    <section class="detail-card">
-
-        <h2>Helpful Resources</h2>
-
-        <ul id="resources">
-        </ul>
-
-    </section>
-
-    <!-- Related Topics -->
-<section class="detail-card">
-
-    <h2>Related Topics</h2>
-
-    <div id="relatedTopics" class="related-topics">
-
-        <p>Loading related topics...</p>
-
-    </div>
-
-</section>
+        </nav>
 
 
-</main>
+        <!-- =================================================
+             TOPIC HEADER
+        ================================================== -->
 
-<footer></footer>
+        <header class="topic-header">
 
-<script type="module" src="../js/details.js"></script>
+
+            <!-- =================================================
+                 TOPIC ICON
+            ================================================== -->
+
+            <div
+                class="topic-icon"
+                id="topicIcon"
+                aria-hidden="true">
+
+                🧠
+
+            </div>
+
+
+            <div>
+
+                <h1 id="topicTitle">
+                    Loading...
+                </h1>
+
+                <p
+                    id="topicDescription"
+                    aria-live="polite">
+
+                    Please wait...
+
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+        ================================================== -->
+
+        <section
+            class="quick-actions"
+            aria-label="Topic actions">
+
+            <button
+                type="button"
+                id="favoriteBtn">
+
+                ❤️ Add to Favorites
+
+            </button>
+
+
+            <button
+                type="button"
+                id="shareBtn">
+
+                🔗 Share
+
+            </button>
+
+
+            <button
+                type="button"
+                id="backBtn">
+
+                ← Back to Categories
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             DEFINITION
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="definition-heading">
+
+            <h2 id="definition-heading">
+                Definition
+            </h2>
+
+            <p
+                id="definition"
+                aria-live="polite">
+
+                Loading...
+
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             SYMPTOMS
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="symptoms-heading">
+
+            <h2 id="symptoms-heading">
+                Common Symptoms
+            </h2>
+
+            <ul
+                id="symptoms"
+                aria-live="polite">
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             CAUSES
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="causes-heading">
+
+            <h2 id="causes-heading">
+                Possible Causes
+            </h2>
+
+            <ul
+                id="causes"
+                aria-live="polite">
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             TREATMENT
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="treatment-heading">
+
+            <h2 id="treatment-heading">
+                Treatment
+            </h2>
+
+            <ul
+                id="treatment"
+                aria-live="polite">
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             PREVENTION
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="prevention-heading">
+
+            <h2 id="prevention-heading">
+                Prevention
+            </h2>
+
+            <ul
+                id="prevention"
+                aria-live="polite">
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             HELPFUL RESOURCES
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="resources-heading">
+
+            <h2 id="resources-heading">
+                Helpful Resources
+            </h2>
+
+            <ul
+                id="resources"
+                aria-live="polite">
+            </ul>
+
+        </section>
+
+
+        <!-- =================================================
+             RELATED TOPICS
+        ================================================== -->
+
+        <section
+            class="detail-card"
+            aria-labelledby="related-topics-heading">
+
+            <h2 id="related-topics-heading">
+                Related Topics
+            </h2>
+
+
+            <div
+                id="relatedTopics"
+                class="related-topics"
+                aria-live="polite">
+
+                <p>
+                    Loading related topics...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer></footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- Common functionality -->
+
+    <script
+        type="module"
+        src="../js/main.js">
+    </script>
+
+
+    <!-- Details page functionality -->
+
+    <script
+        type="module"
+        src="../js/details.js">
+    </script>
+
 
 </body>
+
 </html>
+

@@ -11,3 +11,339 @@ footer{
     box-shadow:var(--shadow);
 
 }
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 4rem;
+    padding: 3rem 0 1.5rem;
+
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
+}
+
+/* =========================================
+   FOOTER BRAND
+========================================= */
+
+.footer-brand h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.6rem;
+}
+
+.footer-brand p {
+    max-width: 400px;
+    margin: 0;
+    line-height: 1.7;
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+   ========================================================= */
+
+.footer-social {
+    text-align: center;
+}
+
+
+.footer-social h3 {
+    margin-bottom: 1rem;
+
+    color: #176b87;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+}
+
+
+/* =========================================================
+   SOCIAL LINK
+   ========================================================= */
+
+.social-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    min-height: 44px;
+
+    padding: 0.55rem 0.8rem;
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   SOCIAL ICON
+   ========================================================= */
+
+.social-link svg {
+    width: 20px;
+
+    height: 20px;
+
+    display: block;
+
+    fill: currentColor;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SOCIAL NAME
+   ========================================================= */
+
+.social-name {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.social-link:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+   ========================================================= */
+
+.social-link:focus-visible {
+    outline: 3px solid #9bd8e5;
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SOCIAL BRAND COLORS
+   ========================================================= */
+
+.facebook {
+    background-color: #1877f2;
+}
+
+
+.github {
+    background-color: #24292f;
+}
+
+
+.youtube {
+    background-color: #ff0000;
+}
+
+
+.x {
+    background-color: #000000;
+}
+
+
+.linkedin {
+    background-color: #0a66c2;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .social-links {
+        gap: 0.6rem;
+    }
+
+
+    .social-link {
+        min-width: 44px;
+
+        width: 44px;
+
+        height: 44px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+
+    .social-name {
+        position: absolute;
+
+        width: 1px;
+
+        height: 1px;
+
+        padding: 0;
+
+        margin: -1px;
+
+        overflow: hidden;
+
+        clip: rect(0, 0, 0, 0);
+
+        white-space: nowrap;
+
+        border: 0;
+    }
+
+
+    .social-link svg {
+        width: 21px;
+
+        height: 21px;
+    }
+
+}
+
+/* =========================================
+   SOCIAL MEDIA HOVER COLORS
+========================================= */
+
+.social-link.facebook:hover {
+    background-color: #1877f2;
+}
+
+.social-link.github:hover {
+    background-color: #111827;
+}
+
+.social-link.youtube:hover {
+    background-color: #ff0000;
+}
+
+.social-link.x:hover {
+    background-color: #000000;
+}
+
+.social-link.linkedin:hover {
+    background-color: #0a66c2;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+    grid-column: 1 / -1;
+
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid #4b5563;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #d1d5db;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-social {
+        margin-top: 1rem;
+    }
+
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .social-link {
+        justify-content: center;
+    }
+
+
+    .footer-bottom {
+        grid-column: 1;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+

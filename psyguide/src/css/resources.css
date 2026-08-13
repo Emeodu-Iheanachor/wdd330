@@ -1,0 +1,497 @@
+/* =========================================================
+   PsyGuide Resources Page
+   ========================================================= */
+
+
+/* =========================================================
+   RESOURCE CONTROLS
+   ========================================================= */
+
+.resource-controls {
+    margin: 2rem 0 3rem;
+
+    padding: 1.5rem;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+
+.resource-controls h2 {
+    margin-top: 0;
+
+    margin-bottom: 1.5rem;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   RESOURCE SEARCH
+   ========================================================= */
+
+.resource-search {
+    margin-bottom: 1.25rem;
+}
+
+
+.resource-search label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: #1f2937;
+
+    font-weight: 600;
+}
+
+
+.search-input-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.search-input-wrapper input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.9rem 3.2rem 0.9rem 1rem;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #1f2937;
+
+    font-size: 1rem;
+}
+
+
+.search-input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+
+.search-input-wrapper input:focus {
+    border-color: #176b87;
+
+    outline: 3px solid #9bd8e5;
+
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   CLEAR SEARCH BUTTON
+   ========================================================= */
+
+.clear-resource-search {
+    position: absolute;
+
+    top: 50%;
+
+    right: 0.6rem;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    color: #176b87;
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.clear-resource-search:hover {
+    background-color: #e8f4f7;
+
+    color: #12576b;
+}
+
+
+.clear-resource-search:focus-visible {
+    outline: 3px solid #9bd8e5;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   RESOURCE CATEGORY
+   ========================================================= */
+
+.resource-category {
+    margin-bottom: 1.25rem;
+}
+
+
+.resource-category label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: #1f2937;
+
+    font-weight: 600;
+}
+
+
+.resource-category select {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #1f2937;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+}
+
+
+.resource-category select:focus {
+    border-color: #176b87;
+
+    outline: 3px solid #9bd8e5;
+
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   RESOURCE COUNT
+   ========================================================= */
+
+.resource-count {
+    margin: 1.5rem 0 0;
+
+    color: #64748b;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESOURCE GRID
+   ========================================================= */
+
+.resources-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   RESOURCE CARD
+   ========================================================= */
+
+.resource-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100%;
+
+    padding: 1.5rem;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.resource-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   RESOURCE CATEGORY BADGE
+   ========================================================= */
+
+.resource-card .resource-category {
+    align-self: flex-start;
+
+    margin-bottom: 0.75rem;
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 20px;
+
+    background-color: #e8f4f7;
+
+    color: #176b87;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   RESOURCE TITLE
+   ========================================================= */
+
+.resource-card h2 {
+    margin: 0 0 0.75rem;
+
+    color: #1f2937;
+
+    font-size: 1.3rem;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   RESOURCE DESCRIPTION
+   ========================================================= */
+
+.resource-description {
+    margin: 0 0 1.25rem;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESOURCE WEBSITE BUTTON
+   ========================================================= */
+
+.resource-link {
+    align-self: flex-start;
+
+    margin-top: auto;
+
+    padding: 0.7rem 1rem;
+
+    border-radius: 6px;
+
+    background-color: #176b87;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.resource-link:hover {
+    background-color: #12576b;
+}
+
+
+.resource-link:focus-visible {
+    outline: 3px solid #9bd8e5;
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.resources-loading {
+    padding: 2rem;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   EMPTY RESULTS
+   ========================================================= */
+
+.resources-empty {
+    grid-column: 1 / -1;
+
+    padding: 3rem 1.5rem;
+
+    text-align: center;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 10px;
+
+    background-color: #f8fafc;
+}
+
+
+.resources-empty h2 {
+    margin-bottom: 0.75rem;
+
+    color: #1f2937;
+}
+
+
+.resources-empty p {
+    margin: 0;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.resources-error {
+    grid-column: 1 / -1;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 10px;
+
+    background-color: #fef2f2;
+}
+
+
+.resources-error h2 {
+    margin-bottom: 0.75rem;
+
+    color: #991b1b;
+}
+
+
+.resources-error p {
+    color: #7f1d1d;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .resources-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .resource-controls {
+        padding: 1.25rem;
+    }
+
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+
+    .resource-card {
+        padding: 1.25rem;
+    }
+
+
+    .resource-card h2 {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .resource-controls {
+        margin-top: 1.5rem;
+
+        padding: 1rem;
+    }
+
+
+    .resource-card {
+        padding: 1rem;
+    }
+
+
+    .search-input-wrapper input,
+    .resource-category select {
+        font-size: 0.95rem;
+    }
+
+}

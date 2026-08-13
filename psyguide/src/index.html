@@ -3,6 +3,10 @@
 
 <head>
 
+    <!-- =========================================
+         DOCUMENT INFORMATION
+    ========================================== -->
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,38 +15,138 @@
 
     <meta
         name="description"
-        content="Search PsyGuide for mental wellness topics, including stress, anxiety, sleep, and emotional wellbeing.">
+        content="PsyGuide is a mental wellness guide that provides helpful information about stress, anxiety, sleep, emotional wellbeing, healthy coping strategies, and everyday wellness.">
 
-    <title>PsyGuide | Search</title>
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
 
 
-    <!-- =========================
+    <!-- =========================================
+         PAGE TITLE
+    ========================================== -->
+
+    <title>
+        PsyGuide | Your Guide to Better Mental Wellness
+    </title>
+
+
+    <!-- =========================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ========================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Your Guide to Better Mental Wellness">
+
+    <meta
+        property="og:description"
+        content="Explore stress, anxiety, sleep, emotional wellbeing, healthy coping strategies, and helpful mental wellness resources with PsyGuide.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide mental wellness guide">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =========================================
+         X / TWITTER CARD
+    ========================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Your Guide to Better Mental Wellness">
+
+    <meta
+        name="twitter:description"
+        content="Explore stress, anxiety, sleep, emotional wellbeing, and helpful mental wellness resources with PsyGuide.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide mental wellness guide">
+
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./images/favicon.ico">
+
+
+    <!-- =========================================
          CSS
-    ========================== -->
+    ========================================== -->
 
     <link
         rel="stylesheet"
-        href="../css/base.css">
+        href="./css/base.css">
 
     <link
         rel="stylesheet"
-        href="../css/layout.css">
+        href="./css/layout.css">
 
     <link
         rel="stylesheet"
-        href="../css/navigation.css">
+        href="./css/navigation.css">
 
     <link
         rel="stylesheet"
-        href="../css/cards.css">
+        href="./css/cards.css">
 
     <link
         rel="stylesheet"
-        href="../css/footer.css">
+        href="./css/footer.css">
 
     <link
         rel="stylesheet"
-        href="../css/responsive.css">
+        href="./css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/api.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css">
 
 </head>
 
@@ -57,136 +161,348 @@
     <header></header>
 
 
-    <main class="container">
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
 
         <!-- =========================
-             SEARCH PAGE
+             HERO SECTION
         ========================== -->
 
-        <section class="search-page">
+        <section class="hero">
+
+            <div class="container hero-content">
+
+
+                <!-- =========================
+                     HERO TEXT
+                ========================== -->
+
+                <div class="hero-text">
+
+                    <h1>
+                        Your Guide to Better Mental Wellness
+                    </h1>
+
+
+                    <p>
+                        Explore helpful information about
+                        stress, anxiety, sleep, and emotional
+                        wellbeing.
+                    </p>
+
+
+                    <!-- =========================
+                         HOME SEARCH
+                    ========================== -->
+
+                    <form
+                        class="hero-search"
+                        id="homeSearchForm">
+
+                        <label for="homeSearch">
+                            Search mental wellness topics
+                        </label>
+
+
+                        <input
+                            type="search"
+                            id="homeSearch"
+                            name="search"
+                            placeholder="Search stress, anxiety, sleep..."
+                            aria-label="Search mental wellness topics"
+                            autocomplete="off">
+
+
+                        <button type="submit">
+                            Search
+                        </button>
+
+                    </form>
+
+
+                    <!-- =========================
+                         EXPLORE TOPICS
+                    ========================== -->
+
+                    <a
+                        href="./categories/"
+                        class="button">
+
+                        Explore Topics
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     HERO IMAGE SLIDER
+                ========================== -->
+
+                <div class="hero-image">
+
+                    <img
+                        src=""
+                        alt="Mental wellness and relaxation"
+                        id="heroImage"
+                        class="hero-slide-image">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MENTAL WELLNESS CATEGORIES
+        ========================== -->
+
+        <section
+            class="container"
+            aria-labelledby="wellness-categories">
 
             <div class="section-heading">
 
-                <h1>
-                    Search Mental Wellness Topics
-                </h1>
+                <h2 id="wellness-categories">
+                    Explore Mental Wellness
+                </h2>
+
 
                 <p>
-                    Search for information about stress,
-                    anxiety, sleep, and other wellness topics.
+                    Learn about common mental wellness
+                    topics and discover helpful information.
                 </p>
 
             </div>
 
 
-            <!-- SEARCH FORM -->
-
-            <form
-                id="searchForm"
-                class="search-form">
-
-                <label for="search">
-                    Search mental wellness topics
-                </label>
+            <div class="category-grid">
 
 
-                <input
-                    type="search"
-                    id="search"
-                    name="search"
-                    placeholder="Search stress, anxiety, sleep..."
-                    aria-label="Search mental wellness topics"
-                    autocomplete="off">
+                <!-- =========================
+                     STRESS
+                ========================== -->
+
+                <article class="category-card">
+
+                    <div
+                        class="category-icon"
+                        aria-hidden="true">
+
+                        🧘
+
+                    </div>
 
 
-                <button type="submit">
-                    Search
-                </button>
-
-            </form>
+                    <h3>
+                        Stress
+                    </h3>
 
 
-            <!-- SEARCH SUGGESTIONS -->
+                    <p>
+                        Learn about common causes of stress
+                        and healthy ways to manage it.
+                    </p>
 
-            <div
-                id="searchSuggestions"
-                class="search-suggestions"
-                aria-live="polite">
+
+                    <a
+                        href="./search/?search=Stress"
+                        class="learn-more">
+
+                        Explore Stress →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =========================
+                     ANXIETY
+                ========================== -->
+
+                <article class="category-card">
+
+                    <div
+                        class="category-icon"
+                        aria-hidden="true">
+
+                        💙
+
+                    </div>
+
+
+                    <h3>
+                        Anxiety
+                    </h3>
+
+
+                    <p>
+                        Understand anxiety symptoms and
+                        explore practical coping strategies.
+                    </p>
+
+
+                    <a
+                        href="./search/?search=Anxiety"
+                        class="learn-more">
+
+                        Explore Anxiety →
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =========================
+                     SLEEP
+                ========================== -->
+
+                <article class="category-card">
+
+                    <div
+                        class="category-icon"
+                        aria-hidden="true">
+
+                        😴
+
+                    </div>
+
+
+                    <h3>
+                        Sleep
+                    </h3>
+
+
+                    <p>
+                        Discover information and helpful
+                        habits for better sleep.
+                    </p>
+
+
+                    <a
+                        href="./search/?search=Sleep"
+                        class="learn-more">
+
+                        Explore Sleep →
+
+                    </a>
+
+                </article>
+
             </div>
-
-
-            <!-- SEARCH RESULTS -->
-
-            <section
-                aria-labelledby="searchResultsHeading">
-
-                <h2 id="searchResultsHeading">
-                    Search Results
-                </h2>
-
-
-                <div
-                    id="searchResults"
-                    class="category-grid">
-                </div>
-
-            </section>
 
         </section>
 
+
+
+        <!-- =========================
+             WELLNESS TIP
+        ========================== -->
+
+        <section class="wellness-tip">
+
+            <div class="container">
+
+                <h2>
+                    Today's Wellness Tip
+                </h2>
+
+
+                <p>
+                    Take a few minutes today to slow down,
+                    breathe deeply, and give yourself time
+                    to relax.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DAILY INSPIRATION
+        ========================== -->
+
+        <section
+            class="quote-card container"
+            aria-labelledby="daily-inspiration">
+
+            <h2 id="daily-inspiration">
+                Daily Inspiration
+            </h2>
+
+
+            <blockquote id="quoteText">
+                Loading...
+            </blockquote>
+
+
+            <p id="quoteAuthor"></p>
+
+
+            <button
+                type="button"
+                id="newQuoteBtn">
+
+                New Quote
+
+            </button>
+
+        </section>
+
+
     </main>
+
 
 
     <!-- =========================
          FOOTER
     ========================== -->
 
-    <footer>
+    <footer></footer>
 
-        <div class="container">
-
-            <p>
-                &copy; 2026 PsyGuide.
-                All rights reserved.
-            </p>
-
-
-            <nav aria-label="Footer navigation">
-
-                <a href="../about/">
-                    About
-                </a>
-
-
-                <a href="../resources/">
-                    Resources
-                </a>
-
-
-                <a href="../categories/">
-                    Categories
-                </a>
-
-            </nav>
-
-        </div>
-
-    </footer>
 
 
     <!-- =========================
          JAVASCRIPT
     ========================== -->
 
+    <!-- Common functionality -->
     <script
         type="module"
-        src="../js/navigation.js">
+        src="./js/main.js">
     </script>
 
+
+    <!-- Home page functionality -->
     <script
         type="module"
-        src="../js/search.js">
+        src="./js/home.js">
     </script>
+
+
+    <!-- Daily quote -->
+    <script
+        type="module"
+        src="./js/quote.js">
+    </script>
+
+
+    <!-- Hero image slider -->
+    <script
+        type="module"
+        src="./js/hero.js">
+    </script>
+
 
 </body>
 

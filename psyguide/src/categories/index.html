@@ -2,50 +2,255 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <!-- =========================================
+         DOCUMENT INFORMATION
+    ========================================== -->
 
-  <title>Categories | PsyGuide</title>
+    <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/navigation.css">
-  <link rel="stylesheet" href="../css/cards.css">
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Browse PsyGuide mental wellness categories including stress, anxiety, sleep, emotional wellbeing, and healthy coping strategies.">
+
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =========================================
+         PAGE TITLE
+    ========================================== -->
+
+    <title>
+        PsyGuide | Mental Wellness Categories
+    </title>
+
+
+    <!-- =========================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ========================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Mental Wellness Categories">
+
+    <meta
+        property="og:description"
+        content="Browse helpful mental wellness categories covering stress, anxiety, sleep, emotional wellbeing, and healthy coping strategies.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/categories/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide mental wellness categories">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =========================================
+         X / TWITTER CARD
+    ========================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Mental Wellness Categories">
+
+    <meta
+        name="twitter:description"
+        content="Browse helpful mental wellness categories covering stress, anxiety, sleep, emotional wellbeing, and healthy coping strategies.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide mental wellness categories">
+
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
 </head>
+
 
 <body>
 
-  <main class="categories-page">
 
-    <section class="categories-header">
-      <h1>Mental Wellness Categories</h1>
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-      <p>
-        Browse helpful topics to improve your emotional and mental wellbeing.
-      </p>
+    <header></header>
 
-      <input
-        type="search"
-        id="categorySearch"
-        placeholder="Search stress, anxiety, sleep..."
-        aria-label="Search mental wellness categories"
-      >
-    </section>
 
-    <section
-      id="categoryGrid"
-      class="category-grid">
-    </section>
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
 
-  </main>
+    <main class="container">
+
+
+        <!-- =========================================
+             CATEGORIES HEADER
+        ========================================== -->
+
+        <header class="categories-header">
+
+            <h1>
+                Mental Wellness Categories
+            </h1>
+
+
+            <p>
+                Browse helpful topics to improve your
+                emotional and mental wellbeing.
+            </p>
+
+
+            <!-- =========================================
+                 CATEGORY SEARCH
+            ========================================== -->
+
+            <label for="categorySearch">
+                Search mental wellness categories
+            </label>
+
+
+            <input
+                type="search"
+                id="categorySearch"
+                name="categorySearch"
+                placeholder="Search stress, anxiety, sleep..."
+                autocomplete="off">
+
+        </header>
+
+
+        <!-- =========================================
+             CATEGORY GRID
+        ========================================== -->
+
+        <section
+            id="categoryGrid"
+            class="category-grid"
+            aria-labelledby="category-grid-heading">
+
+            <h2
+                id="category-grid-heading"
+                class="visually-hidden">
+
+                Mental Wellness Categories
+
+            </h2>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer></footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <!-- Common functionality -->
+
+    <script
+        type="module"
+        src="../js/main.js">
+    </script>
+
+
+    <!-- Categories page functionality -->
+
+    <script
+        type="module"
+        src="../js/categories.js">
+    </script>
+
 
 </body>
-
-<script type="module" src="../js/categories.js"></script>
 
 </html>

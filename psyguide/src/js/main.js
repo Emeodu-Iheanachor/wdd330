@@ -1,12 +1,52 @@
+const baseURL = import.meta.env.BASE_URL;
+
 async function loadComponent(selector, path) {
-  const response = await fetch(path);
-  const html = await response.text();
-  document.querySelector(selector).innerHTML = html;
+
+    try {
+
+        const response = await fetch(path);
+
+        if (!response.ok) {
+            throw new Error(
+                `Failed to load ${path}: ${response.status}`
+            );
+        }
+
+        const html = await response.text();
+
+        const element =
+            document.querySelector(selector);
+
+        if (element) {
+            element.innerHTML = html;
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Component loading error:",
+            error
+        );
+
+    }
 }
 
-await loadComponent("header", "/components/header.html");
-await loadComponent("footer", "/components/footer.html");
 
-const baseURL = import.meta.env.BASE_URL;
-const heroImage = document.querySelector( '[data-image="hero"]' ); 
-if (heroImage) { heroImage.src = `${baseURL}images/hero.jpg`; }
+// =========================================
+// Load Footer
+// =========================================
+
+await loadComponent(
+    "footer",
+    `${baseURL}components/footer.html`
+);
+
+
+// =========================================
+// Navigation
+// =========================================
+
+import "./navigation.js";
+
+
+

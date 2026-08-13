@@ -1,7 +1,12 @@
+Kept the aria-live profile message for dynamic feedback.
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+    <!-- =================================================
+         DOCUMENT INFORMATION
+    ================================================== -->
 
     <meta charset="UTF-8">
 
@@ -11,65 +16,202 @@
 
     <meta
         name="description"
-        content="Manage your PsyGuide profile, favorites, and search history.">
+        content="Manage your PsyGuide profile and personalize your mental wellness experience.">
 
-    <title>PsyGuide | Profile</title>
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =================================================
+         PAGE TITLE
+    ================================================== -->
+
+    <title>
+        PsyGuide | Profile
+    </title>
+
+
+    <!-- =================================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ================================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Profile">
+
+    <meta
+        property="og:description"
+        content="Manage your PsyGuide profile and personalize your mental wellness experience.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/profile/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide user profile">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =================================================
+         X / TWITTER CARD
+    ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Profile">
+
+    <meta
+        name="twitter:description"
+        content="Manage your PsyGuide profile and personalize your mental wellness experience.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide user profile">
+
+
+    <!-- =================================================
+         FAVICON
+    ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =================================================
+         CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/profile.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
 
 </head>
 
+
 <body>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
     <header></header>
 
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
     <main class="container">
 
-        <nav
-            class="breadcrumb"
-            aria-label="Breadcrumb">
 
-            <a href="../index.html">
-                Home
-            </a>
+        <!-- =================================================
+             PROFILE PAGE HEADER
+        ================================================== -->
 
-            <span aria-hidden="true">›</span>
-
-            <span>
-                Profile
-            </span>
-
-        </nav>
-
-
-        <section class="page-header">
+        <header class="page-header">
 
             <h1>
                 My Profile
             </h1>
 
             <p>
-                Manage your PsyGuide preferences and
-                saved activity.
+                Manage your PsyGuide preferences
+                and saved activity.
             </p>
 
-        </section>
+        </header>
 
+
+        <!-- =================================================
+             PROFILE INFORMATION
+        ================================================== -->
 
         <section
-            class="info-section"
-            aria-labelledby="profile-information">
+            class="profile-card"
+            aria-labelledby="profile-information-heading">
 
-            <h2 id="profile-information">
+            <h2 id="profile-information-heading">
                 Profile Information
             </h2>
 
-            <form id="profileForm">
+
+            <!-- =================================================
+                 PROFILE FORM
+            ================================================== -->
+
+            <form
+                id="profileForm">
+
+
+                <!-- =================================================
+                     NAME
+                ================================================== -->
 
                 <div class="form-group">
 
@@ -77,173 +219,76 @@
                         Name
                     </label>
 
+
                     <input
                         type="text"
                         id="profileName"
                         name="profileName"
                         placeholder="Enter your name"
-                        autocomplete="name">
+                        autocomplete="name"
+                        required>
 
                 </div>
 
+
+                <!-- =================================================
+                     SAVE PROFILE
+                ================================================== -->
+
                 <button
                     type="submit"
-                    class="button">
+                    class="profile-save-button">
 
                     Save Profile
 
                 </button>
 
+
+                <!-- =================================================
+                     PROFILE MESSAGE
+                ================================================== -->
+
                 <p
                     id="profileMessage"
+                    class="profile-message"
                     aria-live="polite">
                 </p>
+
 
             </form>
 
         </section>
 
 
-        <section aria-labelledby="activity">
-
-            <h2 id="activity">
-                My Activity
-            </h2>
-
-            <div class="category-grid">
-
-                <article class="card">
-
-                    <div
-                        class="card-icon"
-                        aria-hidden="true">
-                        ⭐
-                    </div>
-
-                    <h3>
-                        Favorites
-                    </h3>
-
-                    <p>
-                        Saved topics:
-                        <strong id="favoriteCount">
-                            0
-                        </strong>
-                    </p>
-
-                    <a
-                        href="../favorites/"
-                        class="button">
-
-                        View Favorites
-
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div
-                        class="card-icon"
-                        aria-hidden="true">
-                        🕘
-                    </div>
-
-                    <h3>
-                        Search History
-                    </h3>
-
-                    <p>
-                        Saved searches:
-                        <strong id="historyCount">
-                            0
-                        </strong>
-                    </p>
-
-                    <a
-                        href="../search/"
-                        class="button">
-
-                        Search Topics
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <section
-            class="info-section"
-            aria-labelledby="manage-data">
-
-            <h2 id="manage-data">
-                Manage My Data
-            </h2>
-
-            <p>
-                PsyGuide can store your profile preferences,
-                favorites, and search history in your browser's
-                Local Storage.
-            </p>
-
-            <div class="profile-actions">
-
-                <button
-                    type="button"
-                    id="clearFavorites"
-                    class="button">
-
-                    Clear Favorites
-
-                </button>
-
-
-                <button
-                    type="button"
-                    id="clearHistory"
-                    class="button">
-
-                    Clear Search History
-
-                </button>
-
-
-                <button
-                    type="button"
-                    id="resetProfile"
-                    class="button">
-
-                    Reset Profile
-
-                </button>
-
-            </div>
-
-            <p
-                id="dataMessage"
-                aria-live="polite">
-            </p>
-
-        </section>
-
     </main>
 
 
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
     <footer></footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- Common functionality -->
 
     <script
         type="module"
-        src="../js/navigation.js">
+        src="../js/main.js">
     </script>
+
+
+    <!-- Profile page functionality -->
 
     <script
         type="module"
         src="../js/profile.js">
     </script>
+
 
 </body>
 

@@ -1,1 +1,157 @@
-const profileForm = document.querySelector("#profileForm"); const profileName = document.querySelector("#profileName"); const profileMessage = document.querySelector("#profileMessage"); const favoriteCount = document.querySelector("#favoriteCount"); const historyCount = document.querySelector("#historyCount"); const clearFavoritesButton = document.querySelector("#clearFavorites"); const clearHistoryButton = document.querySelector("#clearHistory"); const resetProfileButton = document.querySelector("#resetProfile"); const dataMessage = document.querySelector("#dataMessage"); // Load saved profile function loadProfile() { const savedName = localStorage.getItem("psyguide-profile-name"); if (savedName) { profileName.value = savedName; } } // Count favorites function updateFavoriteCount() { const favorites = JSON.parse( localStorage.getItem("psyguide-favorites") ) || []; favoriteCount.textContent = favorites.length; } // Count search history function updateHistoryCount() { const history = JSON.parse( localStorage.getItem("psyguide-search-history") ) || []; historyCount.textContent = history.length; } // Save profile profileForm.addEventListener("submit", (event) => { event.preventDefault(); const name = profileName.value.trim(); if (!name) { profileMessage.textContent = "Please enter your name."; return; } localStorage.setItem( "psyguide-profile-name", name ); profileMessage.textContent = "Your profile has been saved."; }); // Clear favorites clearFavoritesButton.addEventListener( "click", () => { localStorage.removeItem( "psyguide-favorites" ); updateFavoriteCount(); dataMessage.textContent = "Your favorites have been cleared."; } ); // Clear search history clearHistoryButton.addEventListener( "click", () => { localStorage.removeItem( "psyguide-search-history" ); updateHistoryCount(); dataMessage.textContent = "Your search history has been cleared."; } ); // Reset profile resetProfileButton.addEventListener( "click", () => { const confirmed = window.confirm( "Are you sure you want to reset your PsyGuide profile data?" ); if (!confirmed) { return; } localStorage.removeItem( "psyguide-profile-name" ); localStorage.removeItem( "psyguide-favorites" ); localStorage.removeItem( "psyguide-search-history" ); profileName.value = ""; updateFavoriteCount(); updateHistoryCount(); dataMessage.textContent = "Your PsyGuide profile has been reset."; } ); // Initialize page loadProfile(); updateFavoriteCount(); updateHistoryCount();
+// =========================================================
+// PsyGuide Profile
+// =========================================================
+
+
+// =========================================================
+// STORAGE KEY
+// =========================================================
+
+const PROFILE_STORAGE_KEY = "psyguideProfile";
+
+
+// =========================================================
+// ELEMENTS
+// =========================================================
+
+const profileForm =
+    document.getElementById("profileForm");
+
+const profileName =
+    document.getElementById("profileName");
+
+const profileMessage =
+    document.getElementById("profileMessage");
+
+
+// =========================================================
+// LOAD SAVED PROFILE
+// =========================================================
+
+function loadProfile() {
+
+    const savedProfile =
+        localStorage.getItem(
+            PROFILE_STORAGE_KEY
+        );
+
+
+    if (!savedProfile) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const profile =
+            JSON.parse(savedProfile);
+
+
+        if (profile.name) {
+
+            profileName.value =
+                profile.name;
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load profile:",
+            error
+        );
+
+    }
+
+}
+
+
+// =========================================================
+// SAVE PROFILE
+// =========================================================
+
+function saveProfile(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        profileName.value.trim();
+
+
+    // Validate name
+
+    if (!name) {
+
+        profileMessage.textContent =
+            "Please enter your name.";
+
+        profileMessage.classList.add(
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    // Create profile object
+
+    const profile = {
+
+        name: name,
+
+        updatedAt:
+            new Date().toISOString()
+
+    };
+
+
+    // Save to Local Storage
+
+    localStorage.setItem(
+
+        PROFILE_STORAGE_KEY,
+
+        JSON.stringify(profile)
+
+    );
+
+
+    // Display success message
+
+    profileMessage.textContent =
+        "Your profile has been saved successfully.";
+
+    profileMessage.classList.remove(
+        "error"
+    );
+
+    profileMessage.classList.add(
+        "success"
+    );
+
+}
+
+
+// =========================================================
+// FORM EVENT
+// =========================================================
+
+if (profileForm) {
+
+    profileForm.addEventListener(
+        "submit",
+        saveProfile
+    );
+
+}
+
+
+// =========================================================
+// INITIALIZE
+// =========================================================
+
+loadProfile();

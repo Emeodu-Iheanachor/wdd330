@@ -3,46 +3,267 @@
 
 <head>
 
+    <!-- =================================================
+         DOCUMENT INFORMATION
+    ================================================== -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>PsyGuide | Favorites</title>
+    <meta
+        name="description"
+        content="View and manage your saved PsyGuide mental wellness topics and favorite resources.">
 
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-    <link rel="stylesheet" href="/css/favorites.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =================================================
+         PAGE TITLE
+    ================================================== -->
+
+    <title>
+        PsyGuide | Favorite Topics
+    </title>
+
+
+    <!-- =================================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ================================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Favorite Topics">
+
+    <meta
+        property="og:description"
+        content="View your saved PsyGuide mental wellness topics and keep helpful information available for future reference.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/favorites/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide favorite mental wellness topics">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =================================================
+         X / TWITTER CARD
+    ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Favorite Topics">
+
+    <meta
+        name="twitter:description"
+        content="View your saved PsyGuide mental wellness topics.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide favorite mental wellness topics">
+
+
+    <!-- =================================================
+         FAVICON
+    ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =================================================
+         CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/favorites.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
 
 </head>
 
+
 <body>
 
-<header></header>
 
-<main class="container">
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
-    <h1>Your Favorite Topics</h1>
+    <header></header>
 
-    <p>
-        Topics you've saved for quick access.
-    </p>
 
-    <section id="favoritesContainer">
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
 
-        <p>Loading favorites...</p>
+    <main class="container">
 
-    </section>
 
-</main>
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
 
-<footer></footer>
+        <nav
+            class="breadcrumb"
+            aria-label="Breadcrumb">
 
-<script type="module"
-        src="/js/favorites.js"></script>
+            <a href="../index.html">
+                Home
+            </a>
+
+            <span aria-hidden="true">
+                ›
+            </span>
+
+            <span>
+                Favorites
+            </span>
+
+        </nav>
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <header class="page-header">
+
+            <h1>
+                Your Favorite Topics
+            </h1>
+
+            <p>
+                Topics you've saved for quick access.
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             FAVORITES SECTION
+        ================================================== -->
+
+        <section
+            class="favorites-section"
+            aria-labelledby="favorites-heading">
+
+            <h2 id="favorites-heading">
+                Saved Topics
+            </h2>
+
+
+            <!-- =================================================
+                 DYNAMIC FAVORITES CONTAINER
+            ================================================== -->
+
+            <div
+                id="favoritesContainer"
+                aria-live="polite">
+
+                <p class="loading">
+                    Loading favorites...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer></footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- Common functionality -->
+
+    <script
+        type="module"
+        src="../js/main.js">
+    </script>
+
+
+    <!-- Favorites page functionality -->
+
+    <script
+        type="module"
+        src="../js/favorites.js">
+    </script>
+
 
 </body>
 

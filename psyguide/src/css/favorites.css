@@ -1,0 +1,403 @@
+/* =========================================================
+   PsyGuide | Favorites Page
+========================================================= */
+
+
+/* =========================================================
+   Favorites Section
+========================================================= */
+
+.favorites-section {
+    margin-top: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   Favorites Heading
+========================================================= */
+
+.favorites-section > h2 {
+    margin-bottom: 1.5rem;
+
+    font-size: 1.5rem;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   Favorites Container
+========================================================= */
+
+#favoritesContainer {
+    width: 100%;
+
+    margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   Favorites Grid
+========================================================= */
+
+.favorites-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+
+/* =========================================================
+   Favorite Card
+========================================================= */
+
+.favorite-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 1.5rem;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Card Hover */
+
+.favorite-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   Favorite Icon
+========================================================= */
+
+.favorite-card .card-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin-bottom: 1rem;
+
+    border-radius: 50%;
+
+    background-color: #f1f5f9;
+
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   Favorite Card Title
+========================================================= */
+
+.favorite-card h2,
+.favorite-card h3 {
+    margin: 0 0 0.75rem;
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   Favorite Card Description
+========================================================= */
+
+.favorite-card p {
+    flex-grow: 1;
+
+    margin: 0 0 1.25rem;
+
+    color: #475569;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Favorite Actions
+========================================================= */
+
+.favorite-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 0.75rem;
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   View Topic Button
+========================================================= */
+
+.favorite-view {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 0.65rem 1rem;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.favorite-view:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   Remove Favorite Button
+========================================================= */
+
+.remove-favorite {
+    padding: 0.6rem 0.85rem;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    background-color: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.remove-favorite:hover {
+    background-color: #f8fafc;
+
+    border-color: #94a3b8;
+}
+
+
+/* =========================================
+   EMPTY FAVORITES
+   ========================================= */
+
+.empty-favorites {
+    padding: 4rem 2rem;
+
+    text-align: center;
+
+    background-color: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 14px;
+
+    margin-top: 1.5rem;
+}
+
+
+.empty-favorites h3 {
+    margin: 0 0 1rem;
+
+    font-size: 1.5rem;
+
+    line-height: 1.3;
+}
+
+
+.empty-favorites p {
+    max-width: 650px;
+
+    margin: 0 auto 2rem;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   BROWSE TOPICS BUTTON
+   ========================================= */
+
+.browse-topics {
+    display: inline-block;
+
+    padding: 0.75rem 1.4rem;
+
+    background-color: #176b83;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.browse-topics:hover {
+    background-color: #12576b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+.browse-topics:focus-visible {
+    outline: 3px solid rgba(23, 107, 131, 0.3);
+
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   Loading Message
+========================================================= */
+
+.loading {
+    padding: 2rem;
+
+    color: #64748b;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .favorites-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .favorites-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+
+    .favorite-card {
+        padding: 1.25rem;
+    }
+
+
+    .favorite-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .favorite-view,
+    .remove-favorite {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   Small Mobile
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .favorite-card {
+        padding: 1rem;
+    }
+
+
+    .empty-favorites {
+        padding: 2rem 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   Accessibility
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .favorite-card,
+    .favorite-view,
+    .remove-favorite,
+    .browse-topics {
+        transition: none;
+    }
+
+}

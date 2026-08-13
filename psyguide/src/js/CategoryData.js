@@ -1,22 +1,54 @@
-import { buildPath } from "./utils.js";
+// =========================================================
+// Category Data
+// =========================================================
 
 export default class CategoryData {
-  constructor() {
-    this.url = buildPath("data/categories.json");
-  }
 
-  async getCategories() {
-    try {
-      const response = await fetch(this.url);
+    constructor(
+        dataUrl = `${import.meta.env.BASE_URL}data/topics.json`
+    ) {
 
-      if (!response.ok) {
-        throw new Error("Unable to load categories.");
-      }
-
-      return await response.json();
-    } catch (error) {
-      console.error(error);
-      return [];
+        this.dataUrl = dataUrl;
     }
-  }
+
+
+    // =====================================================
+    // Get Categories
+    // =====================================================
+
+    async getCategories() {
+
+        try {
+
+            const response =
+                await fetch(this.dataUrl);
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `Failed to load categories: ${response.status}`
+                );
+            }
+
+
+            const categories =
+                await response.json();
+
+
+            return Array.isArray(categories)
+                ? categories
+                : categories.categories || [];
+
+        } catch (error) {
+
+            console.error(
+                "Unable to load categories:",
+                error
+            );
+
+
+            return [];
+        }
+    }
 }

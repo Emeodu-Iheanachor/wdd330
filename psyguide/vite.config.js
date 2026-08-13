@@ -3,69 +3,82 @@ import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => ({
 
-    // GitHub Pages
-    base: mode === "github"
-        ? "/wdd330/"
-        : "/",
+    // =========================================
+    // Base URL
+    // =========================================
+
+    base:
+        mode === "github"
+            ? "/wdd330/psyguide/"
+            : "/",
+
+
+    // =========================================
+    // Source Directory
+    // =========================================
+
+    root: "src",
+
+
+    // =========================================
+    // Public Assets
+    // =========================================
+
+    publicDir: "../public",
+
+
+    // =========================================
+    // Build Configuration
+    // =========================================
 
     build: {
 
-        // Production files
-        outDir: "dist",
+        outDir: "../dist",
 
-        // Remove previous build before creating a new one
         emptyOutDir: true,
 
         rollupOptions: {
 
             input: {
 
-                // Home
                 main: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/index.html"
                 ),
 
-                // Categories
                 categories: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/categories/index.html"
                 ),
 
-                // Details
-                details: resolve(
-                    __dirname,
-                    "src/details/index.html"
-                ),
-
-                // Search
                 search: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/search/index.html"
                 ),
 
-                // Favorites
                 favorites: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/favorites/index.html"
                 ),
 
-                // Resources
                 resources: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/resources/index.html"
                 ),
 
-                // About
                 about: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/about/index.html"
                 ),
 
-                // Profile
                 profile: resolve(
-                    __dirname,
+                    import.meta.dirname,
                     "src/profile/index.html"
+                ),
+
+                details: resolve(
+                    import.meta.dirname,
+                    "src/details/index.html"
                 )
 
             }

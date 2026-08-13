@@ -1,24 +1,62 @@
-import { loadHeaderFooter } from "./utils.js";
+// =========================================================
+// Categories Page
+// =========================================================
+
 import CategoryData from "./CategoryData.js";
 import CategoryList from "./CategoryList.js";
 
-await loadHeaderFooter();
+
+// =========================================================
+// Initialize Category Data
+// =========================================================
 
 const categoryData = new CategoryData();
 
-const grid = document.querySelector("#categoryGrid");
 
-const categoryList = new CategoryList(
-  categoryData,
-  grid
-);
+// =========================================================
+// Category Grid
+// =========================================================
+
+const grid =
+    document.querySelector("#categoryGrid");
+
+
+// =========================================================
+// Category List
+// =========================================================
+
+const categoryList =
+    new CategoryList(
+        categoryData,
+        grid
+    );
+
+
+// =========================================================
+// Initialize Categories
+// =========================================================
 
 await categoryList.init();
 
-const search = document.querySelector("#categorySearch");
 
-search.addEventListener("input", (event) => {
+// =========================================================
+// Category Search
+// =========================================================
 
-  categoryList.filter(event.target.value);
+const search =
+    document.querySelector("#categorySearch");
 
-});
+
+if (search) {
+
+    search.addEventListener(
+        "input",
+        (event) => {
+
+            categoryList.filter(
+                event.target.value
+            );
+
+        }
+    );
+}

@@ -1,0 +1,102 @@
+/* =========================================
+   QUOTE CARD
+========================================= */
+
+.quote-card {
+
+    background: #ffffff;
+
+    padding: 2rem;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    margin: 2rem auto 1.5rem;
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   QUOTE TEXT
+========================================= */
+
+.quote-card blockquote {
+
+    font-size: 1.2rem;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    margin: 0 auto 1rem;
+
+    max-width: 750px;
+}
+
+
+/* =========================================
+   QUOTE AUTHOR
+========================================= */
+
+.quote-card p {
+
+    color: #6b7280;
+
+    margin: 0 0 1.25rem;
+}
+
+
+/* =========================================
+   NEW QUOTE BUTTON
+========================================= */
+
+.quote-card button {
+
+    padding: 0.75rem 1.25rem;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.quote-card button:hover {
+
+    background: #1d4ed8;
+}
+
+
+/* =========================================
+   Quote Section - Reduce Space Before Footer
+========================================= */
+
+.quote-card {
+    margin: 1.5rem auto 1rem;
+    padding: 1.5rem;
+}
+
+/* Reduce the bottom space of the main content */
+main {
+    padding-bottom: 1rem;
+}
+
+/* Prevent the quote section from creating extra space */
+.quote-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer starts closer to the quote */
+footer {
+    margin-top: 0;
+}

@@ -3,114 +3,340 @@
 
 <head>
 
+    <!-- =================================================
+         DOCUMENT INFORMATION
+    ================================================== -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>PsyGuide | Search</title>
+    <meta
+        name="description"
+        content="Search PsyGuide for mental wellness topics including stress, anxiety, sleep, emotional wellbeing, and healthy coping strategies.">
 
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-    <link rel="stylesheet" href="/css/search.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =================================================
+         PAGE TITLE
+    ================================================== -->
+
+    <title>
+        PsyGuide | Search Mental Wellness Topics
+    </title>
+
+
+    <!-- =================================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ================================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Search Mental Wellness Topics">
+
+    <meta
+        property="og:description"
+        content="Search PsyGuide for helpful information about stress, anxiety, sleep, emotional wellbeing, and other mental wellness topics.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/search/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide mental wellness search">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =================================================
+         X / TWITTER CARD
+    ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Search Mental Wellness Topics">
+
+    <meta
+        name="twitter:description"
+        content="Search PsyGuide for helpful mental wellness information.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide search page">
+
+
+    <!-- =================================================
+         FAVICON
+    ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =================================================
+         CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/search.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
 
 </head>
 
+
 <body>
 
-<header></header>
 
-<main class="container">
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
-    <section class="search-header">
-
-        <h1>Search Mental Health Topics</h1>
-
-        <p>
-            Search for symptoms, conditions, treatments,
-            prevention tips, and mental health resources.
-        </p>
-
-    </section>
-
-    <section class="search-box">
-
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="Search topics..."
-        autocomplete="off">
-
-    <div
-        id="suggestions"
-        class="suggestions">
-    </div>
-
-</section>
-
-<!-- ============================= -->
-<!-- Search History -->
-<!-- ============================= -->
-
-<section class="history-section">
-
-    <div class="history-header">
-
-        <h2>Recent Searches</h2>
-
-        <button
-            id="clearHistoryBtn"
-            class="clear-history-btn">
-
-            Clear History
-
-        </button>
-
-    </div>
-
-    <div
-        id="searchHistory"
-        class="history-list">
-
-        <p class="placeholder">
-
-            No recent searches.
-
-        </p>
-
-    </div>
-
-    </section>
+    <header></header>
 
 
-    <section class="results-section">
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
 
-        <h2>Search Results</h2>
+    <main class="container">
 
-        <div
-            id="searchResults"
-            class="results-grid">
 
-            <p class="placeholder">
-                Start typing to search...
-            </p>
+        <!-- =================================================
+             SEARCH PAGE
+        ================================================== -->
 
-        </div>
+        <section class="search-page">
 
-    </section>
 
-</main>
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
 
-<footer></footer>
+            <header class="section-heading">
 
-<script
-    type="module"
-    src="/js/search.js">
-    
-</script>
+                <h1>
+                    Search Mental Wellness Topics
+                </h1>
+
+
+                <p>
+                    Search for information about stress,
+                    anxiety, sleep, and other wellness topics.
+                </p>
+
+            </header>
+
+
+            <!-- =================================================
+                 SEARCH FORM
+            ================================================== -->
+
+            <form
+                id="searchForm"
+                class="search-form">
+
+                <label for="searchInput">
+                    Search mental wellness topics
+                </label>
+
+
+                <div class="search-input-group">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        name="search"
+                        placeholder="Search stress, anxiety, sleep..."
+                        autocomplete="off">
+
+
+                    <button
+                        type="submit">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- =================================================
+                 SEARCH SUGGESTIONS
+            ================================================== -->
+
+            <div
+                id="searchSuggestions"
+                class="search-suggestions"
+                aria-live="polite">
+            </div>
+
+
+            <!-- =================================================
+                 SEARCH RESULTS
+            ================================================== -->
+
+            <section
+                aria-labelledby="searchResultsHeading">
+
+                <h2 id="searchResultsHeading">
+                    Search Results
+                </h2>
+
+
+                <div
+                    id="searchResults"
+                    class="category-grid"
+                    aria-live="polite">
+
+                    <p class="placeholder">
+                        Start typing to search for a topic.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SEARCH HISTORY
+            ================================================== -->
+
+            <section
+                class="search-history-section"
+                aria-labelledby="searchHistoryHeading">
+
+
+                <div class="search-history-header">
+
+                    <h2 id="searchHistoryHeading">
+                        Recent Searches
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        id="clearHistoryBtn"
+                        class="clear-history-btn">
+
+                        Clear History
+
+                    </button>
+
+                </div>
+
+
+                <div id="searchHistory">
+
+                    <p class="placeholder">
+                        No recent searches.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer></footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- Common functionality -->
+
+    <script
+        type="module"
+        src="../js/main.js">
+    </script>
+
+
+    <!-- Search page functionality -->
+
+    <script
+        type="module"
+        src="../js/search.js">
+    </script>
+
 
 </body>
 

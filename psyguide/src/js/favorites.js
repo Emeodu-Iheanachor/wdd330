@@ -1,99 +1,287 @@
+// =========================================================
+// PsyGuide Favorites
+// =========================================================
+
 import FavoritesData from "./FavoritesData.js";
 
+
+// =========================================================
+// Favorites Data
+// =========================================================
+
 const favoritesData = new FavoritesData();
-const container = document.getElementById("favoritesContainer");
 
-/**
- * Display a friendly message when there are no favorites.
- */
+
+// =========================================================
+// Favorites Container
+// =========================================================
+
+const container =
+    document.getElementById("favoritesContainer");
+
+
+// Stop if the container does not exist
+if (!container) {
+
+    console.error(
+        "Favorites container was not found."
+    );
+
+} else {
+
+
+// =========================================================
+// Empty Favorites State
+// =========================================================
+
 function renderEmptyState() {
-  container.innerHTML = `
-    <div class="empty-state">
-      <h2>No Favorites Yet</h2>
-      <p>
-        You haven't added any mental health topics to your favorites.
-      </p>
 
-      <a class="browse-btn" href="../categories/index.html">
-        Browse Topics
-      </a>
-    </div>
-  `;
+    container.innerHTML = `
+
+        <div class="empty-favorites">
+
+            <h3>
+                No Favorites Yet
+            </h3>
+
+            <p>
+                You haven't added any mental wellness
+                topics to your favorites.
+            </p>
+
+            <a
+                class="browse-topics"
+                href="../categories/index.html">
+
+                Browse Topics
+
+            </a>
+
+        </div>
+
+    `;
 }
 
-/**
- * Create a single favorite card.
- */
+
+// =========================================================
+// Create Favorite Card
+// =========================================================
+
 function createCard(topic) {
-  const card = document.createElement("article");
-  card.className = "favorite-card";
 
-  card.innerHTML = `
-    <div class="favorite-header">
-      <span class="favorite-icon">${topic.icon}</span>
+    const card =
+        document.createElement("article");
 
-      <div>
-        <h2>${topic.title}</h2>
-        <p>${topic.description}</p>
-      </div>
-    </div>
 
-    <div class="favorite-actions">
+    card.className =
+        "favorite-card";
 
-      <a
-        class="view-btn"
-        href="../details/index.html?id=${topic.id}">
-        View Details
-      </a>
 
-      <button
-        class="remove-btn"
-        data-id="${topic.id}">
-        Remove
-      </button>
+    card.innerHTML = `
 
-    </div>
-  `;
+        <div class="favorite-header">
 
-  return card;
+
+            <div
+                class="card-icon"
+                aria-hidden="true">
+
+                ${topic.icon || "🧠"}
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    ${topic.title}
+                </h3>
+
+                <p>
+                    ${topic.description}
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="favorite-actions">
+
+
+            <a
+                class="favorite-view"
+                href="../details/index.html?id=${topic.id}">
+
+                View Details
+
+            </a>
+
+
+            <button
+                type="button"
+                class="remove-favorite"
+                data-id="${topic.id}"
+                aria-label="Remove ${topic.title} from favorites">
+
+                Remove
+
+            </button>
+
+
+        </div>
+
+    `;
+
+
+    return card;
 }
 
-/**
- * Render all favorites.
- */
+
+// =========================================================
+// Render Favorites
+// =========================================================
+
 async function renderFavorites() {
-  const favorites = await favoritesData.getFavorites();
 
-  container.innerHTML = "";
+    try {
 
-  if (!favorites.length) {
-    renderEmptyState();
-    return;
-  }
 
-  favorites.forEach((topic) => {
-    container.appendChild(createCard(topic));
-  });
+        // ---------------------------------------------
+        // Loading State
+        // ---------------------------------------------
 
-  attachEvents();
+        container.innerHTML = `
+
+            <p class="loading">
+                Loading favorites...
+            </p>
+
+        `;
+
+
+        // ---------------------------------------------
+        // Get Favorites
+        // ---------------------------------------------
+
+        const favorites =
+            await favoritesData.getFavorites();
+
+
+        // ---------------------------------------------
+        // Empty State
+        // ---------------------------------------------
+
+        if (!favorites.length) {
+
+            renderEmptyState();
+
+            return;
+        }
+
+
+        // ---------------------------------------------
+        // Clear Loading Message
+        // ---------------------------------------------
+
+        container.innerHTML = "";
+
+
+        // ---------------------------------------------
+        // Create Favorite Cards
+        // ---------------------------------------------
+
+        favorites.forEach((topic) => {
+
+            container.appendChild(
+                createCard(topic)
+            );
+
+        });
+
+
+        // ---------------------------------------------
+        // Add Remove Events
+        // ---------------------------------------------
+
+        attachEvents();
+
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load favorites:",
+            error
+        );
+
+
+        container.innerHTML = `
+
+            <div class="empty-favorites">
+
+                <h3>
+                    Unable to Load Favorites
+                </h3>
+
+                <p>
+                    We couldn't load your saved topics.
+                    Please try again later.
+                </p>
+
+                <a
+                    class="browse-topics"
+                    href="../categories/index.html">
+
+                    Browse Topics
+
+                </a>
+
+            </div>
+
+        `;
+    }
 }
 
-/**
- * Handle remove buttons.
- */
+
+// =========================================================
+// Remove Favorite Events
+// =========================================================
+
 function attachEvents() {
-  const removeButtons =
-    document.querySelectorAll(".remove-btn");
 
-  removeButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const id = button.dataset.id;
+    const removeButtons =
+        container.querySelectorAll(
+            ".remove-favorite"
+        );
 
-      favoritesData.removeFavorite(id);
 
-      renderFavorites();
+    removeButtons.forEach((button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const id =
+                    button.dataset.id;
+
+
+                favoritesData.removeFavorite(id);
+
+
+                renderFavorites();
+
+            }
+        );
+
     });
-  });
 }
+
+
+// =========================================================
+// Initialize Favorites Page
+// =========================================================
 
 renderFavorites();
+
+}

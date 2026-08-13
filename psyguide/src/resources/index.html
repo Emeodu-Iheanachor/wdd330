@@ -3,6 +3,10 @@
 
 <head>
 
+    <!-- =================================================
+         DOCUMENT INFORMATION
+    ================================================== -->
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,34 +15,175 @@
 
     <meta
         name="description"
-        content="Explore mental wellness resources, educational information, and helpful support resources with PsyGuide.">
+        content="Explore trusted mental wellness resources from organizations that provide information, education, and support.">
 
-    <title>PsyGuide | Resources</title>
+    <meta
+        name="author"
+        content="Emeodu Raphael Chidiebere Iheanachor">
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <meta
+        name="theme-color"
+        content="#176b87">
+
+
+    <!-- =================================================
+         PAGE TITLE
+    ================================================== -->
+
+    <title>
+        PsyGuide | Mental Wellness Resources
+    </title>
+
+
+    <!-- =================================================
+         OPEN GRAPH
+         Facebook | LinkedIn | WhatsApp
+    ================================================== -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:site_name"
+        content="PsyGuide">
+
+    <meta
+        property="og:title"
+        content="PsyGuide | Mental Wellness Resources">
+
+    <meta
+        property="og:description"
+        content="Explore trusted mental wellness resources and organizations that provide educational information and support.">
+
+    <meta
+        property="og:url"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/resources/">
+
+    <meta
+        property="og:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        property="og:image:alt"
+        content="PsyGuide mental wellness resources">
+
+    <meta
+        property="og:locale"
+        content="en_US">
+
+
+    <!-- =================================================
+         X / TWITTER CARD
+    ================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="PsyGuide | Mental Wellness Resources">
+
+    <meta
+        name="twitter:description"
+        content="Explore trusted mental wellness resources and organizations.">
+
+    <meta
+        name="twitter:image"
+        content="https://emeodu-iheanachor.github.io/wdd330/psyguide/images/psyguide-preview.jpg">
+
+    <meta
+        name="twitter:image:alt"
+        content="PsyGuide mental wellness resources">
+
+
+    <!-- =================================================
+         FAVICON
+    ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../images/favicon.ico">
+
+
+    <!-- =================================================
+         CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/layout.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/navigation.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/cards.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/resources.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
 
 </head>
 
+
 <body>
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
     <header></header>
 
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
     <main class="container">
+
+
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
 
         <nav
             class="breadcrumb"
             aria-label="Breadcrumb">
 
-            <a href="../index.html">
+            <a href="../">
                 Home
             </a>
 
-            <span aria-hidden="true">›</span>
+            <span aria-hidden="true">
+                ›
+            </span>
 
             <span>
                 Resources
@@ -46,112 +191,151 @@
 
         </nav>
 
-        <section class="page-header">
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <header class="page-header">
 
             <h1>
                 Mental Wellness Resources
             </h1>
 
             <p>
-                Explore helpful information and resources
-                to support your emotional and mental wellbeing.
+                Explore trusted resources covering mental
+                health, psychology, counselling, behavioral
+                health, workplace well-being, and human
+                development.
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             RESOURCE SEARCH AND FILTER
+        ================================================== -->
+
+        <section
+            class="resource-controls"
+            aria-labelledby="resource-search-heading">
+
+            <h2 id="resource-search-heading">
+                Find a Resource
+            </h2>
+
+
+            <!-- =================================================
+                 SEARCH
+            ================================================== -->
+
+            <div class="resource-search">
+
+                <label for="resourceSearch">
+                    Search resources
+                </label>
+
+
+                <div class="search-input-wrapper">
+
+                    <input
+                        type="search"
+                        id="resourceSearch"
+                        name="resourceSearch"
+                        placeholder="Search psychology, counselling, workplace..."
+                        autocomplete="off">
+
+
+                    <button
+                        type="button"
+                        id="clearResourceSearch"
+                        class="clear-resource-search"
+                        aria-label="Clear resource search"
+                        title="Clear search"
+                        hidden>
+
+                        ×
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CATEGORY FILTER
+            ================================================== -->
+
+            <div class="resource-category">
+
+                <label for="resourceCategory">
+                    Filter by category
+                </label>
+
+
+                <select
+                    id="resourceCategory"
+                    name="resourceCategory"
+                    aria-label="Filter resources by category">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESOURCE COUNT
+            ================================================== -->
+
+            <p
+                id="resourceCount"
+                class="resource-count"
+                aria-live="polite">
+
+                Loading resources...
+
             </p>
 
         </section>
 
 
-        <section aria-labelledby="learning-resources">
+        <!-- =================================================
+             MENTAL HEALTH RESOURCES
+        ================================================== -->
 
-            <h2 id="learning-resources">
-                Learning Resources
+        <section
+            aria-labelledby="mental-health-resources">
+
+            <h2 id="mental-health-resources">
+                Mental Health and Development Resources
             </h2>
 
-            <div class="category-grid">
 
-                <article class="card">
+            <!-- =================================================
+                 DYNAMIC RESOURCE CONTAINER
+            ================================================== -->
 
-                    <div
-                        class="card-icon"
-                        aria-hidden="true">
-                        🧠
-                    </div>
+            <div
+                id="resourcesContainer"
+                class="resources-grid">
 
-                    <h3>
-                        Mental Wellness
-                    </h3>
-
-                    <p>
-                        Learn about mental wellness topics,
-                        symptoms, causes, prevention, and
-                        healthy coping strategies.
-                    </p>
-
-                    <a
-                        href="../categories/"
-                        class="button">
-                        Explore Topics
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div
-                        class="card-icon"
-                        aria-hidden="true">
-                        🧘
-                    </div>
-
-                    <h3>
-                        Stress Management
-                    </h3>
-
-                    <p>
-                        Learn about common sources of stress
-                        and explore healthy ways to manage
-                        everyday challenges.
-                    </p>
-
-                    <a
-                        href="../categories/"
-                        class="button">
-                        Explore Categories
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <div
-                        class="card-icon"
-                        aria-hidden="true">
-                        😴
-                    </div>
-
-                    <h3>
-                        Sleep and Wellbeing
-                    </h3>
-
-                    <p>
-                        Explore information about healthy
-                        sleep habits and their relationship
-                        with overall wellbeing.
-                    </p>
-
-                    <a
-                        href="../categories/"
-                        class="button">
-                        Explore Topics
-                    </a>
-
-                </article>
+                <p class="resources-loading">
+                    Loading mental wellness resources...
+                </p>
 
             </div>
 
         </section>
 
+
+        <!-- =================================================
+             SUPPORT RESOURCES
+        ================================================== -->
 
         <section
             aria-labelledby="support-resources">
@@ -160,74 +344,108 @@
                 Support Resources
             </h2>
 
+
             <div class="category-grid">
+
+
+                <!-- =================================================
+                     TALK TO SOMEONE
+                ================================================== -->
 
                 <article class="card">
 
                     <div
                         class="card-icon"
                         aria-hidden="true">
+
                         💬
+
                     </div>
+
 
                     <h3>
                         Talk to Someone
                     </h3>
 
+
                     <p>
                         Talking with a trusted friend,
-                        family member, teacher, or professional
-                        can provide valuable emotional support.
+                        family member, teacher, counsellor,
+                        or qualified professional can
+                        provide valuable emotional support.
                     </p>
 
                 </article>
 
+
+                <!-- =================================================
+                     PROFESSIONAL SUPPORT
+                ================================================== -->
 
                 <article class="card">
 
                     <div
                         class="card-icon"
                         aria-hidden="true">
+
                         🤝
+
                     </div>
+
 
                     <h3>
                         Professional Support
                     </h3>
 
+
                     <p>
-                        Qualified mental health professionals
+                        Qualified mental health and
+                        behavioural health professionals
                         can provide personalized assessment,
-                        guidance, and treatment.
+                        guidance, counselling, and treatment.
                     </p>
 
                 </article>
 
+
+                <!-- =================================================
+                     SELF-CARE
+                ================================================== -->
 
                 <article class="card">
 
                     <div
                         class="card-icon"
                         aria-hidden="true">
+
                         ❤️
+
                     </div>
+
 
                     <h3>
                         Self-Care
                     </h3>
 
+
                     <p>
                         Healthy sleep, physical activity,
                         relaxation, social connection, and
-                        personal time can support wellbeing.
+                        personal time can support emotional
+                        and mental well-being.
                     </p>
 
                 </article>
+
 
             </div>
 
         </section>
 
+
+        <!-- =================================================
+             IMPORTANT INFORMATION
+        ================================================== -->
 
         <section
             class="info-section"
@@ -237,12 +455,25 @@
                 Important Information
             </h2>
 
+
             <p>
                 PsyGuide provides educational information
-                about mental wellness. It is not intended
-                to replace professional medical or mental
-                health advice, diagnosis, or treatment.
+                about mental wellness, psychology,
+                counselling, behavioral health, and
+                human development. It is not intended
+                to replace professional medical or
+                mental health advice, diagnosis, or treatment.
             </p>
+
+
+            <p>
+                Information provided through external
+                organizations and websites belongs to
+                those organizations. Users should consult
+                qualified professionals when they need
+                personalized advice or assistance.
+            </p>
+
 
             <p>
                 If you are experiencing a serious or urgent
@@ -252,15 +483,36 @@
 
         </section>
 
+
     </main>
 
 
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
     <footer></footer>
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <!-- Common functionality -->
 
     <script
         type="module"
-        src="../js/navigation.js">
+        src="../js/main.js">
     </script>
+
+
+    <!-- Resources page functionality -->
+
+    <script
+        type="module"
+        src="../js/resources.js">
+    </script>
+
 
 </body>
 

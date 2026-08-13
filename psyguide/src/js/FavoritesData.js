@@ -1,94 +1,219 @@
+// =========================================================
+// Favorites Data
+// =========================================================
+
 export default class FavoritesData {
-  constructor(dataUrl = "/data/topics.json") {
-    this.dataUrl = dataUrl;
-    this.storageKey = "psyguideFavorites";
-  }
 
-  /**
-   * Load all topics.
-   */
-  async getTopics() {
-    try {
-      const response = await fetch(this.dataUrl);
+    constructor(
+        dataUrl = `${import.meta.env.BASE_URL}data/topics.json`
+    ) {
 
-      if (!response.ok) {
-        throw new Error(`Failed to load topics (${response.status})`);
-      }
+        this.dataUrl = dataUrl;
 
-      return await response.json();
-    } catch (error) {
-      console.error(error);
-      return [];
+        this.storageKey = "psyguideFavorites";
     }
-  }
 
-  /**
-   * Get favorite topic IDs.
-   */
-  getFavoriteIds() {
-    return JSON.parse(localStorage.getItem(this.storageKey)) || [];
-  }
 
-  /**
-   * Save favorite IDs.
-   */
-  saveFavoriteIds(ids) {
-    localStorage.setItem(
-      this.storageKey,
-      JSON.stringify(ids)
-    );
-  }
+    // =====================================================
+    // Load All Topics
+    // =====================================================
 
-  /**
-   * Get favorite topic objects.
-   */
-  async getFavorites() {
-    const topics = await this.getTopics();
-    const favoriteIds = this.getFavoriteIds();
+    async getTopics() {
 
-    return topics.filter((topic) =>
-      favoriteIds.includes(topic.id)
-    );
-  }
+        const response =
+            await fetch(this.dataUrl);
 
-  /**
-   * Remove a favorite.
-   */
-  removeFavorite(id) {
-    const favorites = this.getFavoriteIds().filter(
-      (favoriteId) => favoriteId !== id
-    );
 
-    this.saveFavoriteIds(favorites);
-  }
+        if (!response.ok) {
 
-  /**
-   * Check if a topic is already a favorite.
-   */
-  isFavorite(id) {
-    return this.getFavoriteIds().includes(id);
-  }
+            throw new Error(
+                `Failed to load topics from ${this.dataUrl} (${response.status})`
+            );
+        }
 
-  /**
-   * Add a topic to favorites.
-   */
-  addFavorite(id) {
-    const favorites = this.getFavoriteIds();
 
-    if (!favorites.includes(id)) {
-      favorites.push(id);
-      this.saveFavoriteIds(favorites);
+        const topics =
+            await response.json();
+
+
+        if (!Array.isArray(topics)) {
+
+            throw new Error(
+                "topics.json must contain an array of topics."
+            );
+        }
+
+
+        return topics;
     }
-  }
 
-  /**
-   * Toggle favorite status.
-   */
-  toggleFavorite(id) {
-    if (this.isFavorite(id)) {
-      this.removeFavorite(id);
-    } else {
-      this.addFavorite(id);
+
+    // =====================================================
+    // Get Favorite Topic IDs
+    // =====================================================
+
+    getFavoriteIds() {
+
+        try {
+
+            const storedFavorites =
+                localStorage.getItem(
+                    this.storageKey
+                );
+
+
+            if (!storedFavorites) {
+                return [];
+            }
+
+
+            const ids =
+                JSON.parse(storedFavorites);
+
+
+            if (!Array.isArray(ids)) {
+
+                console.warn(
+                    "Favorite storage is not an array."
+                );
+
+                return [];
+            }
+
+
+            return ids.map((id) =>
+                String(id)
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Unable to read favorites:",
+                error
+            );
+
+            return [];
+        }
     }
-  }
+
+
+    // =====================================================
+    // Save Favorite IDs
+    // =====================================================
+
+    saveFavoriteIds(ids) {
+
+        const normalizedIds =
+            ids.map((id) =>
+                String(id)
+            );
+
+
+        localStorage.setItem(
+            this.storageKey,
+            JSON.stringify(normalizedIds)
+        );
+    }
+
+
+    // =====================================================
+    // Get Favorite Topic Objects
+    // =====================================================
+
+    async getFavorites() {
+
+        const topics =
+            await this.getTopics();
+
+
+        const favoriteIds =
+            this.getFavoriteIds();
+
+
+        return topics.filter((topic) =>
+            favoriteIds.includes(
+                String(topic.id)
+            )
+        );
+    }
+
+
+    // =====================================================
+    // Remove Favorite
+    // =====================================================
+
+    removeFavorite(id) {
+
+        const normalizedId =
+            String(id);
+
+
+        const favorites =
+            this.getFavoriteIds().filter(
+                (favoriteId) =>
+                    favoriteId !== normalizedId
+            );
+
+
+        this.saveFavoriteIds(
+            favorites
+        );
+    }
+
+
+    // =====================================================
+    // Check Favorite Status
+    // =====================================================
+
+    isFavorite(id) {
+
+        return this.getFavoriteIds().includes(
+            String(id)
+        );
+    }
+
+
+    // =====================================================
+    // Add Favorite
+    // =====================================================
+
+    addFavorite(id) {
+
+        const normalizedId =
+            String(id);
+
+
+        const favorites =
+            this.getFavoriteIds();
+
+
+        if (!favorites.includes(normalizedId)) {
+
+            favorites.push(
+                normalizedId
+            );
+
+
+            this.saveFavoriteIds(
+                favorites
+            );
+        }
+    }
+
+
+    // =====================================================
+    // Toggle Favorite
+    // =====================================================
+
+    toggleFavorite(id) {
+
+        if (this.isFavorite(id)) {
+
+            this.removeFavorite(id);
+
+        } else {
+
+            this.addFavorite(id);
+        }
+    }
 }
