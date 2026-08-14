@@ -60,6 +60,8 @@ jobs:
 
       - name: Build PsyGuide
         working-directory: ./psyguide
+        env:
+          VITE_SERVER_URL: https://wdd330-backend.onrender.com/
         run: npm run build:github
 
 
